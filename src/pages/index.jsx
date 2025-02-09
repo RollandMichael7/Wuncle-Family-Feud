@@ -234,7 +234,7 @@ export default function Home() {
               error={error}
             />
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       );
     }
@@ -246,7 +246,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{t("Friendly Feud")}</title>
+        <title>{t("Family Feud")}</title>
         <meta name="author" content="Joshua Cold" />
         <meta
           name="description"

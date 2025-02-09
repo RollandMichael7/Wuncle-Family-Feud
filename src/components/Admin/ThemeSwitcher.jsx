@@ -7,30 +7,20 @@ const ThemeSwitcher = ({ game, setGame, send }) => {
   const { theme, setTheme } = useTheme();
 
   const availableThemes = {
+    weird: {
+      bgcolor: "white",
+      fgcolor: "text-black",
+      title: "Weird",
+    },
+    harvey: {
+      bgcolor: "white",
+      fgcolor: "text-black",
+      title: "Steve Harvey",
+    },
     default: {
       bgcolor: "white",
       fgcolor: "text-black",
       title: "default",
-    },
-    darkTheme: {
-      bgcolor: "#18181B",
-      fgcolor: "text-white",
-      title: "dark theme",
-    },
-    slate: {
-      bgcolor: "#18181B",
-      fgcolor: "text-white",
-      title: "slate",
-    },
-    educational: {
-      bgcolor: "#fffbf0",
-      fgcolor: "text-black",
-      title: "educational",
-    },
-    red: {
-      bgcolor: "#7B2C35",
-      fgcolor: "text-white",
-      title: "red",
     },
   };
 

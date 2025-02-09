@@ -1,7 +1,9 @@
-import '../global.css'
-import ThemeProvider from '@/components/ThemeProvider'
-import Head from 'next/head'
-import Script from 'next/script'
+import "../css/global.css";
+import "../css/scroll-bg.css";
+import "../css/prism.css";
+import ThemeProvider from "@/components/ThemeProvider";
+import Head from "next/head";
+import Script from "next/script";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -32,16 +34,17 @@ export default function MyApp({ Component, pageProps }) {
         {/* Prevent unloaded theme on page refresh causing white flash if dark theme */}
       </Head>
       <Script
-      id='theme-loader'
+        id="theme-loader"
         dangerouslySetInnerHTML={{
           __html: `
           var theme = localStorage.getItem('theme') || 'default'
           document.documentElement.classList.add(theme)
-        `
-      }} />
+        `,
+        }}
+      />
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }
