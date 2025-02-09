@@ -19,10 +19,10 @@ function adjustTextSize(text, limit = 8, startingSize = 80) {
 
 export default function TitleLogo(props) {
   const [isMounted, setIsMounted] = useState(false);
-  
+
   useEffect(() => {
     setIsMounted(true);
-  }, [])
+  }, []);
 
   let hasTitle = props.insert.length > 0 ? true : false;
   const { t } = useTranslation();
@@ -270,13 +270,13 @@ export default function TitleLogo(props) {
               -inkscape-font-specification: 'C059 Bold';
               text-align: center;
             "
-            font-size="${adjustTextSize(t("friendly"))}"
+            font-size="${adjustTextSize(t("Wuncle's"))}"
             text-anchor="middle"
             stroke-width="0.7"
             stroke-linejoin="round"
             id="tspan38"
           >
-            ${t("friendly")}
+            ${t("Wuncle's")}
           </tspan>
         </tspan>
       </text>
@@ -294,14 +294,14 @@ export default function TitleLogo(props) {
       >
         <tspan
           style="fill: url(#g);"
-          font-size="${adjustTextSize(t("friendly"))}"
+          font-size="${adjustTextSize(t("Wuncle's"))}"
           text-anchor="middle"
           stroke="#000000"
           stroke-width="1.13319"
           stroke-linejoin="round"
           id="tspan60"
         >
-          ${t("friendly")}
+          ${t("Wuncle's")}
         </tspan>
       </tspan>
     </text>
