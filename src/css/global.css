@@ -38,3 +38,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Feud";
+  src: url("/fonts/HelveticaNeue-CondensedBold.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 5px black;
+}

@@ -6,3 +6,9 @@ export enum PrismSide {
   Top,
   Bottom,
 }
+
+export interface Answer {
+  ans: String;
+  pnt: number;
+  trig: boolean;
+}
