@@ -78,31 +78,31 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
     <div style={sceneStyles} className={`prism-scene ${isVisible ? "opacity-100" : "opacity-0"}`}>
       <div style={prismStyles} className={`prism ${showClass}`}>
         <div
-          className="prism__face prism__face--front bg-gradient-to-t from-primary-700 to-primary-500"
+          className="prism__face prism__face--front bg-gradient-to-t from-primary-900 to-primary-700"
           style={frontBackStyle(true)}
         >
           {frontLabel}
         </div>
         <div
-          className="prism__face prism__face--back bg-gradient-to-t from-primary-700 to-primary-500"
+          className="prism__face prism__face--back bg-gradient-to-t from-primary-900 to-primary-700"
           style={frontBackStyle(false)}
         >
           {backLabel}
         </div>
         <div
-          className="prism__face prism__face--right bg-gradient-to-t from-primary-700 to-primary-500"
+          className="prism__face prism__face--right bg-gradient-to-t from-primary-900 to-primary-700"
           style={leftRightStyle(false)}
         >
           {rightLabel}
         </div>
         <div
-          className="prism__face prism__face--left bg-gradient-to-t from-primary-700 to-primary-500"
+          className="prism__face prism__face--left bg-gradient-to-t from-primary-900 to-primary-700"
           style={leftRightStyle(true)}
         >
           {leftLabel}
         </div>
         <div
-          className="prism__face prism__face--top bg-gradient-to-t from-primary-700 to-primary-500"
+          className="prism__face prism__face--top bg-gradient-to-t from-primary-900 to-primary-700"
           style={topBottomStyles(true)}
         >
           {topLabel}

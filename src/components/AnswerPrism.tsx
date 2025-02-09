@@ -67,7 +67,7 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
               padding: "5px 15px",
             }}
             className={
-              "text-shadow flex items-center justify-center bg-gradient-to-t from-primary-900 to-primary-700 text-6xl"
+              "text-shadow flex items-center justify-center bg-gradient-to-t from-primary-700 to-primary-500 text-6xl"
             }
           >
             {answer?.trig ? answer.pnt : ""}

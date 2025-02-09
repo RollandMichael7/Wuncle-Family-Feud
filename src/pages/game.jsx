@@ -97,7 +97,7 @@ export default function Game(props) {
           setIsHost(true);
         }
       } else if (json.action === "mistake" || json.action === "show_mistake") {
-        var audio = new Audio("wrong.mp3");
+        var audio = new Audio("wrong.wav");
         audio.play();
         setShowMistake(true);
         setTimeout(() => {
@@ -107,7 +107,7 @@ export default function Game(props) {
         setGame({});
         window.close();
       } else if (json.action === "reveal") {
-        var audio = new Audio("good-answer.mp3");
+        var audio = new Audio("good-answer.wav");
         audio.play();
       } else if (json.action === "final_reveal") {
         var audio = new Audio("fm-answer-reveal.mp3");
@@ -116,7 +116,7 @@ export default function Game(props) {
         var audio = new Audio("duplicate.mp3");
         audio.play();
       } else if (json.action === "final_submit") {
-        var audio = new Audio("good-answer.mp3");
+        var audio = new Audio("good-answer.wav");
         audio.play();
       } else if (json.action === "final_wrong") {
         var audio = new Audio("try-again.mp3");
@@ -234,15 +234,15 @@ export default function Game(props) {
             </button>
           </div>
         ) : null}
-        <div className="pointer-events-none absolute">
+        <div className="pointer-events-none absolute flex size-full items-center justify-center">
           <Image
             id="xImg"
             width={1000}
             height={1000}
             className={`pointer-events-none fixed inset-0 z-50 p-24 ${
-              showMistake ? "opacity-90" : "opacity-0"
+              showMistake ? "opacity-100" : "opacity-0"
             } transition-opacity duration-300 ease-in-out`}
-            src="/x.svg"
+            src="/x.png"
             alt="Mistake indicator"
             aria-hidden={!showMistake}
           />

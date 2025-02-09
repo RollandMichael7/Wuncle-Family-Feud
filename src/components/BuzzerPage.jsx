@@ -68,7 +68,7 @@ export default function BuzzerPage(props) {
         console.debug(props.id);
         send({ action: "pong", id: props.id });
       } else if (json.action === "mistake" || json.action === "show_mistake") {
-        var audio = new Audio("wrong.mp3");
+        var audio = new Audio("wrong.wav");
         audio.play();
         if (json.action === "mistake" || json.action === "show_mistake") {
           setShowMistake(true);
@@ -141,7 +141,7 @@ export default function BuzzerPage(props) {
             className={`pointer-events-none fixed inset-0 z-50 p-24 ${
               showMistake ? "opacity-90" : "opacity-0"
             } transition-opacity duration-300 ease-in-out`}
-            src="/x.svg"
+            src="/x.png"
             alt="Mistake indicator"
             aria-hidden={!showMistake}
           />
