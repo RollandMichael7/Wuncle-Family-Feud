@@ -17,14 +17,14 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
   answer,
   answerNum,
   width = 550,
-  height = 150,
-  depth = 150,
+  height = 140,
+  depth = 75,
 }) => {
-  const [displaySide, setDisplaySide] = useState(PrismSide.Bottom);
+  const [displaySide, setDisplaySide] = useState(answer?.trig ? PrismSide.Back : PrismSide.Front);
 
   useEffect(() => {
     textFit(document.getElementsByClassName("answer-text"), { multiLine: true, detectMultiLine: false });
-    setDisplaySide(answer?.trig ? PrismSide.Front : PrismSide.Bottom);
+    setDisplaySide(answer?.trig ? PrismSide.Back : PrismSide.Front);
   }, [answer]);
 
   const LABEL_MARGIN = 30;
@@ -46,6 +46,18 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
       depth={depth}
       currentSide={displaySide}
       frontLabel={
+        isVisible ? (
+          <span
+            style={labelStyles}
+            className="prism-label text-shadow bg-gradient-to-t from-primary-900 to-primary-700"
+          >
+            {answerNum}
+          </span>
+        ) : (
+          ""
+        )
+      }
+      backLabel={
         <div className="flex h-full items-center justify-center">
           <span
             style={{
@@ -65,26 +77,13 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
               height: "calc(100% - 10px)",
               borderLeft: "4px solid white",
               padding: "5px 15px",
+              marginRight: "0.25rem",
             }}
-            className={
-              "text-shadow flex items-center justify-center bg-gradient-to-t from-primary-700 to-primary-500 text-6xl"
-            }
+            className={"answer-points text-shadow flex items-center justify-center text-6xl"}
           >
             {answer?.trig ? answer.pnt : ""}
           </span>
         </div>
-      }
-      bottomLabel={
-        isVisible ? (
-          <span
-            style={labelStyles}
-            className="prism-label text-shadow bg-gradient-to-t from-primary-900 to-primary-700"
-          >
-            {answerNum}
-          </span>
-        ) : (
-          ""
-        )
       }
     />
   );

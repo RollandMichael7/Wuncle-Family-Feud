@@ -48,3 +48,7 @@
 .text-shadow {
   text-shadow: 1px 1px 5px black;
 }
+
+.answer-points {
+  background: linear-gradient(1turn, rgb(var(--colors-primary-900)) 20%, rgb(var(--colors-primary-500)) 60%, rgb(var(--colors-primary-400)));
+}

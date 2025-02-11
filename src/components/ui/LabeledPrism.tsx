@@ -5,15 +5,15 @@ import { useTranslation } from "react-i18next";
 interface LabeledPrismProps {
   isVisible: boolean;
   currentSide: PrismSide;
+  width: number;
+  height: number;
+  depth: number;
   frontLabel?: any;
   bottomLabel?: any;
   rightLabel?: any;
   backLabel?: any;
   leftLabel?: any;
   topLabel?: any;
-  width?: number;
-  height?: number;
-  depth?: number;
 }
 
 const LabeledPrism: React.FC<LabeledPrismProps> = ({
@@ -25,9 +25,9 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
   backLabel = "",
   leftLabel = "",
   topLabel = "",
-  width = 550,
-  height = 150,
-  depth = 150,
+  width,
+  height,
+  depth,
 }) => {
   const showClass = `show-${PrismSide[currentSide].toLowerCase()}`;
 
@@ -37,7 +37,9 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
       width: width,
       height: height,
       lineHeight: `${height}px`,
-      transform: `rotateY(${isFront ? "0deg" : "180deg"}) translateZ(${frontBackTranslate}px)`,
+      transform: isFront
+        ? `translateZ(${frontBackTranslate}px)`
+        : `translateZ(-${frontBackTranslate}px) rotateX(180deg)`,
     };
   };
 
@@ -66,7 +68,7 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
   const sceneStyles = {
     width: width,
     height: height,
-    perspective: width,
+    margin: ".25rem",
   };
 
   const prismStyles = {
@@ -77,16 +79,10 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
   return (
     <div style={sceneStyles} className={`prism-scene ${isVisible ? "opacity-100" : "opacity-0"}`}>
       <div style={prismStyles} className={`prism ${showClass}`}>
-        <div
-          className="prism__face prism__face--front bg-gradient-to-t from-primary-900 to-primary-700"
-          style={frontBackStyle(true)}
-        >
+        <div className="prism__face prism__face--front" style={frontBackStyle(true)}>
           {frontLabel}
         </div>
-        <div
-          className="prism__face prism__face--back bg-gradient-to-t from-primary-900 to-primary-700"
-          style={frontBackStyle(false)}
-        >
+        <div className="prism__face prism__face--back" style={frontBackStyle(false)}>
           {backLabel}
         </div>
         <div
