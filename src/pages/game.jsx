@@ -5,13 +5,14 @@ import Round from "@/components/Round";
 import TeamName from "@/components/TeamName";
 import TitlePage from "@/components/Title/TitlePage.jsx";
 import { ERROR_CODES } from "@/i18n/errorCodes";
-import { data } from "autoprefixer";
 import cookieCutter from "cookie-cutter";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 let timerInterval = null;
+
+const MAX_NUM_MISTAKES = 3;
 
 export default function Game(props) {
   const { i18n, t } = useTranslation();
@@ -99,13 +100,13 @@ export default function Game(props) {
           setIsHost(true);
         }
       } else if (json.action === "mistake") {
+        var audio = new Audio("wrong.wav");
+        audio.play();
         setnumMistakes(json.data.numMistakes);
         setShowMistake(true);
         setTimeout(() => {
           setShowMistake(false);
         }, 2000);
-        var audio = new Audio("wrong.wav");
-        audio.play();
       } else if (json.action === "quit") {
         setGame({});
         window.close();
@@ -237,19 +238,17 @@ export default function Game(props) {
             </button>
           </div>
         ) : null}
-        <div
-          className={`pointer-events-none absolute z-50 flex h-screen w-screen items-center justify-center ${showMistake ? "opacity-100" : "opacity-0"} transition-opacity duration-300 ease-in-out`}
-        >
-          {[...Array(numMistakes)].map((x, index) => (
+        <div className={`pointer-events-none fixed z-50 flex h-screen w-screen items-center justify-center`}>
+          {[...Array(MAX_NUM_MISTAKES)].map((x, index) => (
             <Image
               id="xImg"
               width={10000}
               height={10000}
               style={{
-                width: "30%",
+                width: `${showMistake && numMistakes > index ? "30%" : "0px"}`,
                 padding: "1rem",
               }}
-              className={`pointer-events-none inset-0`}
+              className={`pointer-events-none ${showMistake && numMistakes > index ? "transform-show opacity-100" : "transform-hide opacity-0"} transition-bounce`}
               src="/x.png"
               alt="Mistake indicator"
               aria-hidden={!showMistake}

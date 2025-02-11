@@ -52,3 +52,23 @@
 .answer-points {
   background: linear-gradient(1turn, rgb(var(--colors-primary-900)) 20%, rgb(var(--colors-primary-500)) 60%, rgb(var(--colors-primary-400)));
 }
+
+.top-50 {
+  top: 50%;
+}
+
+.left-50 {
+  left: 50%;
+}
+
+.transform-hide {
+  transform: scale(0);
+}
+
+.transform-show {
+  transform: scale(1);
+}
+
+.transition-bounce {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
