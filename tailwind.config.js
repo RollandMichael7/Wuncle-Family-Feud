@@ -45,13 +45,15 @@ module.exports = {
               200: "#FEF08A",
             },
             primary: {
-              1000: "#002E6B", // dark
+              1100: "#0041AD", // dark
+              1000: "#002E6B",
               900: "#1E3A8A",
               700: "#1D4ED8",
-              500: "#6366F1",
+              500: "#0066F1",
               400: "#6CA2CF",
               300: "#93C5FD",
-              200: "#BFDBFE", // light
+              200: "#BFDBFE",
+              100: "#88BDE6",
             },
             foreground: "black",
             fastm: {
