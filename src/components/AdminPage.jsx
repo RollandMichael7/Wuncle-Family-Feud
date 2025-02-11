@@ -57,7 +57,7 @@ function TeamControls(props) {
           props.send({ action: "data", data: props.game });
           props.send({
             action: "mistake",
-            data: props.game.teams[props.team].mistake,
+            data: { numMistakes: props.game.teams[props.team].mistakes },
           });
         }}
       >
@@ -148,6 +148,7 @@ function FinalRoundButtonControls(props) {
             props.send({ action: "data", data: props.game });
             props.send({
               action: x.selection !== 0 ? "final_submit" : "mistake",
+              data: { numMistakes: 1 },
             });
           }}
         >
@@ -723,7 +724,10 @@ export default function AdminPage(props) {
                   id="showMistakeButton"
                   className="flex grow flex-row items-center justify-center rounded border-4 bg-secondary-300 p-10 text-2xl text-foreground"
                   onClick={() => {
-                    send({ action: "show_mistake" });
+                    send({
+                      action: "mistake",
+                      data: { numMistakes: 1 },
+                    });
                   }}
                 >
                   <Image width={150} height={150} style={{ objectFit: "contain" }} src="/x.png" alt="Show Mistake" />

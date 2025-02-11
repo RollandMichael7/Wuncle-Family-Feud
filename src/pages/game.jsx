@@ -5,6 +5,7 @@ import Round from "@/components/Round";
 import TeamName from "@/components/TeamName";
 import TitlePage from "@/components/Title/TitlePage.jsx";
 import { ERROR_CODES } from "@/i18n/errorCodes";
+import { data } from "autoprefixer";
 import cookieCutter from "cookie-cutter";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -18,6 +19,7 @@ export default function Game(props) {
   const [timer, setTimer] = useState(0);
   const [error, setErrorVal] = useState("");
   const [showMistake, setShowMistake] = useState(false);
+  const [numMistakes, setnumMistakes] = useState(0);
   const [isHost, setIsHost] = useState(false);
   const [buzzed, setBuzzed] = useState({});
   const ws = useRef(null);
@@ -96,13 +98,14 @@ export default function Game(props) {
         if (json.data?.registeredPlayers[id] == "host") {
           setIsHost(true);
         }
-      } else if (json.action === "mistake" || json.action === "show_mistake") {
-        var audio = new Audio("wrong.wav");
-        audio.play();
+      } else if (json.action === "mistake") {
+        setnumMistakes(json.data.numMistakes);
         setShowMistake(true);
         setTimeout(() => {
           setShowMistake(false);
         }, 2000);
+        var audio = new Audio("wrong.wav");
+        audio.play();
       } else if (json.action === "quit") {
         setGame({});
         window.close();
@@ -234,18 +237,24 @@ export default function Game(props) {
             </button>
           </div>
         ) : null}
-        <div className="pointer-events-none absolute flex size-full items-center justify-center">
-          <Image
-            id="xImg"
-            width={1000}
-            height={1000}
-            className={`pointer-events-none fixed inset-0 z-50 p-24 ${
-              showMistake ? "opacity-100" : "opacity-0"
-            } transition-opacity duration-300 ease-in-out`}
-            src="/x.png"
-            alt="Mistake indicator"
-            aria-hidden={!showMistake}
-          />
+        <div
+          className={`pointer-events-none absolute z-50 flex h-screen w-screen items-center justify-center ${showMistake ? "opacity-100" : "opacity-0"} transition-opacity duration-300 ease-in-out`}
+        >
+          {[...Array(numMistakes)].map((x, index) => (
+            <Image
+              id="xImg"
+              width={10000}
+              height={10000}
+              style={{
+                width: "30%",
+                padding: "1rem",
+              }}
+              className={`pointer-events-none inset-0`}
+              src="/x.png"
+              alt="Mistake indicator"
+              aria-hidden={!showMistake}
+            />
+          ))}
         </div>
         <div className={`${game?.settings?.theme} min-h-screen`}>
           <div className="">

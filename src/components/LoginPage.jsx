@@ -42,7 +42,6 @@ export default function LoginPage(props) {
   };
 
   const displayError = props.error || error;
-  console.log(theme);
 
   return (
     <div className={`flex min-h-screen w-full flex-col space-y-10 bg-main p-5`}>

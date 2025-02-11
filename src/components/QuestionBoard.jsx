@@ -9,7 +9,7 @@ export default function QuestionBoard(props) {
 
   return (
     <div className="flex flex-row items-center justify-center">
-      <div className="grid rounded-3xl px-10 lg:grid-flow-col lg:grid-rows-4" style={{ marginTop: "6.75rem" }}>
+      <div className="grid rounded-3xl px-10 lg:grid-flow-col lg:grid-rows-4" style={{ marginTop: "7rem" }}>
         {[...Array(MAX_NUM_ANSWERS)].map((x, index) => (
           <AnswerPrism
             isVisible={props.round.answers[index] != undefined}

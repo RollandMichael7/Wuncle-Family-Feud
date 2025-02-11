@@ -75,7 +75,7 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
               fontFamily: "feud",
               width: "20%",
               height: "calc(100% - 10px)",
-              borderLeft: "4px solid white",
+              borderLeft: "3px solid lightgray",
               padding: "5px 15px",
               marginRight: "0.25rem",
             }}
