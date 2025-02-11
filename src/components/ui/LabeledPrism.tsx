@@ -97,10 +97,7 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
         >
           {leftLabel}
         </div>
-        <div
-          className="prism__face prism__face--top bg-gradient-to-t from-primary-900 to-primary-700"
-          style={topBottomStyles(true)}
-        >
+        <div className="prism__face prism__face--top" style={topBottomStyles(true)}>
           {topLabel}
         </div>
         <div

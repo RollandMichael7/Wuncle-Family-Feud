@@ -50,7 +50,7 @@
 }
 
 .answer-points {
-  background: linear-gradient(1turn, rgb(var(--colors-primary-900)) 20%, rgb(var(--colors-primary-500)) 60%, rgb(var(--colors-primary-400)));
+  background: linear-gradient(1turn, rgb(var(--colors-primary-1100)) 30%, 60%, rgb(var(--colors-primary-100)));
 }
 
 .top-50 {
