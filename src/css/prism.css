@@ -52,7 +52,7 @@
 }
 
 .prism__face--front {
-  background: linear-gradient(1turn, rgb(var(--colors-primary-1100)) 30%, 60%, rgb(var(--colors-primary-100)));
+  background: radial-gradient(ellipse at center top, rgb(153,220,255) 0%, rgb(91,162,253) 19%, rgb(2,58,156) 90%);
 }
 .prism__face--top {
   background: linear-gradient(rgb(var(--colors-primary-1100)), rgb(var(--colors-primary-100)), rgb(var(--colors-primary-1100)));

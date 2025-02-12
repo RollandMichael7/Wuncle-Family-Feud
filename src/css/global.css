@@ -45,12 +45,82 @@
   font-display: swap;
 }
 
+.text-3d {
+  text-shadow: 0 1px 0 #17202A, 0 2px 0 #17202A,
+    0 7px 0 #17202A, 0 8px 0 #17202A,
+    0 11px 0 #17202A, 0 12px 0 #17202A;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.label-front {
+  position: fixed;
+}
+.label-back {
+  transform: rotateY(180deg);
+}
+
 .text-shadow {
   text-shadow: 1px 1px 5px black;
 }
 
+.drop-shadow {
+  filter: drop-shadow(0 0.5rem 0.75rem black) !important;
+}
+
 .answer-points {
   background: linear-gradient(1turn, rgb(var(--colors-primary-1100)) 30%, 60%, rgb(var(--colors-primary-100)));
+}
+
+.points-container {
+  perspective: 300px;
+  transform-style: preserve-3d;
+
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  width: 2vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-points {
+  font-family: "feud";
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 0px 2rem;
+  padding: 0px 4rem;
+
+  -moz-border-radius: 50%;
+  border: 6px solid whitesmoke;
+  border-radius: 50%;
+
+  color: white;
+  font-size: 4em;
+  text-align: center;
+  background: radial-gradient(ellipse at center top, rgb(153,220,255) 0%, rgb(91,162,253) 19%, rgb(2,58,156) 70%);
+}
+
+.round-points {
+  font-family: "feud";
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 4rem 2rem;
+  padding: 0px 4rem;
+
+  color: white;
+  font-size: 10em;
+  text-align: center;
 }
 
 .top-50 {

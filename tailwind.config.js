@@ -53,7 +53,7 @@ module.exports = {
               400: "#6CA2CF",
               300: "#93C5FD",
               200: "#BFDBFE",
-              100: "#88BDE6",
+              100: "#62A9fD", //light
             },
             foreground: "black",
             fastm: {
