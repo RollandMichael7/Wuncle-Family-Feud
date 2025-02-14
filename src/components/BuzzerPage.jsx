@@ -148,7 +148,7 @@ export default function BuzzerPage(props) {
         </div>
         <button
           id="quitButton"
-          className="text-1xl z-50 w-24 self-end rounded-lg bg-secondary-900 p-2 font-bold uppercase shadow-md hover:bg-secondary-300"
+          className="text-1xl z-50 w-24 rounded-lg bg-secondary-900 p-2 font-bold uppercase shadow-md hover:bg-secondary-300"
           onClick={() => {
             send({ action: "quit" });
           }}
@@ -159,7 +159,7 @@ export default function BuzzerPage(props) {
           <>
             {!game.title && !game.is_final_round ? (
               <div className="flex flex-col space-y-5 pt-8">
-                <Round game={game} />
+                <Round game={game} isGamePage={false} />
 
                 {/* Buzzer Section TODO replace with function*/}
                 <div className="w-full text-center">
@@ -195,11 +195,11 @@ export default function BuzzerPage(props) {
                   {error !== "" ? <p className="text-2xl text-failure-700">{error}</p> : null}
                 </div>
                 {/* END Buzzer Section TODO replace with function*/}
-                <div className="flex min-w-full flex-row justify-between space-x-3">
+                <div className="flex min-w-full flex-row justify-between space-x-3 px-10">
                   <TeamName game={game} team={0} />
                   <TeamName game={game} team={1} />
                 </div>
-                <div className="">
+                <div className="buzzer-page">
                   <QuestionBoard round={game.rounds[game.round]} />
                 </div>
                 <div className="w-full grow space-y-2 rounded border-4 text-center">

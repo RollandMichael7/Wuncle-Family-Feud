@@ -20,7 +20,7 @@ function RoundPointTally(props) {
 
   // whatever is currently showing stays til 1/2-way
   // then other one shows
-  if (elem && currValue != props.points) {
+  if (elem && areFlipping) {
     const front = document.getElementById(frontId);
     const back = document.getElementById(backId);
     setTimeout(
@@ -62,7 +62,9 @@ function RoundPointTally(props) {
   };
 
   return (
-    <div className={`${props.team == "total" ? "round-points" : "team-points drop-shadow"}`}>
+    <div
+      className={`${props.team == "total" ? "round-points" : "team-points drop-shadow"} ${props.isGamePage ? "game-page" : "buzzer-page drop-shadow"}`}
+    >
       <div
         id={id}
         style={{ transitionDuration: `${POINT_TRANSITION_TIME_SEC}s` }}
@@ -86,10 +88,14 @@ export default function Round(props) {
   let round = props.game.rounds[current_round];
   return (
     <div className="flex w-auto flex-col items-center space-y-1">
-      <div className="flex h-28 w-screen flex-row justify-between">
-        <RoundPointTally points={props.game.teams[0].points} team={1} />
-        <RoundPointTally points={props.game.point_tracker[props.game.round]} team="total" />
-        <RoundPointTally points={props.game.teams[1].points} team={2} />
+      <div className={`flex h-28 flex-row justify-between ${props.isGamePage ? "w-screen" : "w-full"}`}>
+        <RoundPointTally points={props.game.teams[0].points} team={1} isGamePage={props.isGamePage} />
+        <RoundPointTally
+          points={props.game.point_tracker[props.game.round]}
+          team="total"
+          isGamePage={props.isGamePage}
+        />
+        <RoundPointTally points={props.game.teams[1].points} team={2} isGamePage={props.isGamePage} />
       </div>
 
       <div className="flex flex-row justify-center">

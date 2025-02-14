@@ -210,7 +210,7 @@ export default function Game(props) {
     } else {
       gameSession = (
         <div className="flex h-screen flex-col space-y-10 px-10 py-20">
-          <Round game={game} />
+          <Round game={game} isGamePage={true} />
           <QuestionBoard round={game.rounds[game.round]} />
           {/* <div className="flex flex-row justify-around">
             <TeamName game={game} team={0} />
