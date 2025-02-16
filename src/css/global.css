@@ -114,12 +114,11 @@
 
   -moz-border-radius: 50%;
   border: 6px solid whitesmoke;
-  border-radius: 50%;
 
   color: white;
   font-size: 4em;
   text-align: center;
-  background: radial-gradient(ellipse at center top, rgb(153,220,255) 0%, rgb(91,162,253) 19%, rgb(2,58,156) 70%);
+  background: rgb(2,58,156);
 }
 
 .round-points {
