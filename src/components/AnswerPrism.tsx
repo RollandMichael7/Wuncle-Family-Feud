@@ -27,12 +27,13 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
     setDisplaySide(answer?.trig ? PrismSide.Back : PrismSide.Front);
   }, [answer]);
 
-  const LABEL_MARGIN = 30;
+  // margins dont include 6px border
+  const LABEL_MARGIN = 24;
   const labelStyles = {
     height: `${height - LABEL_MARGIN * 2}px`,
-    width: `${height - LABEL_MARGIN * 2}px`,
-    marginTop: `${LABEL_MARGIN}px`,
-    marginBottom: `${LABEL_MARGIN}px`,
+    width: `${(height - LABEL_MARGIN * 2) * 1.25}px`,
+    marginTop: `${LABEL_MARGIN - 6}px`,
+    marginBottom: `${LABEL_MARGIN - 6}px`,
     marginLeft: "auto",
     marginRight: "auto",
     fontFamily: "feud",
