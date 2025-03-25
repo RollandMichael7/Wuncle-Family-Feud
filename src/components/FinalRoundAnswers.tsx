@@ -18,14 +18,18 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
   return questions.map((x, i) => (
     <div
       key={`final-round-answers-${i}`}
-      className="flex justify-between"
+      className="final-round-answer-container flex justify-between"
       style={{
         minWidth: 0,
+        position: "relative",
       }}
     >
+      <div className="final-round-cursor-container">
+        <span className="final-round-cursor"></span>
+      </div>
       <div
         className="flex items-center bg-fastm-holder font-extrabold uppercase"
-        style={{ height: 70, minWidth: 0, marginBottom: "2.5rem", width: "85%" }}
+        style={{ height: 70, minWidth: 0, marginBottom: "2.25rem", width: "84%", position: "relative" }}
       >
         <p
           id={`finalRound${roundNumber}Answer${i}Text`}
@@ -37,7 +41,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
       </div>
       <div
         className="flex items-center justify-center bg-fastm-holder font-extrabold uppercase text-fastm-text"
-        style={{ width: "10%", height: 70 }}
+        style={{ width: "12%", height: 70 }}
       >
         {x.revealed && (
           <p id={`finalRound${roundNumber}PointsTotalText`} style={{ fontSize: "3.5rem", margin: 0 }}>

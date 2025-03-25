@@ -26,11 +26,11 @@ export default function FinalPage(props) {
       </div>
 
       {/* Total */}
-      <div className="flex w-full justify-end">
+      <div className="flex w-full justify-end" style={{ zIndex: 20 }}>
         <p
           id="finalRoundTotalPointsText"
           className="font-bold uppercase"
-          style={{ fontSize: "4rem", color: "white", marginRight: "20rem", marginTop: "6.25rem" }}
+          style={{ fontSize: "4rem", color: "white", marginRight: "20rem", marginTop: "7.5rem", zIndex: 20 }}
         >
           {t("number", { count: total })}
         </p>

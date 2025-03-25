@@ -78,7 +78,7 @@ module.exports = {
               fm: "url('/fm-bg.png')",
             },
             fontFamily: {
-              main: "Feud",
+              main: "Genty",
             },
             fontSize: {
               button: "2.5rem",
