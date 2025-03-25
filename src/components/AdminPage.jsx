@@ -917,6 +917,7 @@ export default function AdminPage(props) {
                         disabled={timerStarted}
                         onClick={() => {
                           console.debug(game);
+                          //game.final_round.forEach((q) => q.revealed = false);
                           game.is_final_second = true;
                           game.hide_first_round = true;
                           props.setGame((prv) => ({ ...prv }));
@@ -938,6 +939,8 @@ export default function AdminPage(props) {
                           className={`rounded border-4 bg-secondary-300 p-5 text-3xl ${timerStarted ? "opacity-50" : ""}`}
                           disabled={timerStarted}
                           onClick={() => {
+                            game.final_round.forEach((q) => (q.revealed = true));
+                            game.final_round_2.forEach((q) => (q.revealed = false));
                             game.is_final_round = true;
                             game.hide_first_round = false;
                             game.is_final_second = false;

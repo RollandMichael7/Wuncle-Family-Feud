@@ -70,6 +70,29 @@
   filter: drop-shadow(0 0.5rem 0.75rem black) !important;
 }
 
+.final-round-timer {
+  font-family: "feud";
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 10%;
+  margin: auto;
+  -moz-border-radius: 50%;
+  border: 6px solid whitesmoke;
+  border-radius: 50%;
+
+  color: white;
+  font-size: 4em;
+  text-align: center;
+  background: radial-gradient(ellipse at center top, rgb(153,220,255) 0%, rgb(91,162,253) 19%, rgb(2,58,156) 70%);
+}
+
+.final-round-answer {
+  font-family: "feud";
+}
+
 .answer-points {
   background: linear-gradient(1turn, rgb(var(--colors-primary-1100)) 30%, 60%, rgb(var(--colors-primary-100)));
 }

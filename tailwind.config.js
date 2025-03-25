@@ -75,9 +75,10 @@ module.exports = {
             backgroundImage: {
               main: "url('/wuncle-bg.jpg')",
               game: "url('/feud-bg.png')",
+              fm: "url('/fm-bg.png')",
             },
             fontFamily: {
-              main: "Genty",
+              main: "Feud",
             },
             fontSize: {
               button: "2.5rem",
@@ -91,6 +92,11 @@ module.exports = {
               button: {
                 primary: "white",
                 secondary: "black",
+              },
+              fastm: {
+                text: "white",
+                holder: "black",
+                background: "blue",
               },
             },
           },

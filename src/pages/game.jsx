@@ -201,10 +201,8 @@ export default function Game(props) {
       gameSession = <TitlePage game={game} />;
     } else if (game.is_final_round) {
       gameSession = (
-        <div className="flex w-full justify-center">
-          <div className="flex w-11/12 flex-col space-y-6 py-20 sm:w-11/12 sm:px-8 md:w-4/6 lg:w-5/6">
-            <FinalPage game={game} timer={timer} />
-          </div>
+        <div className="flex h-screen w-screen justify-center">
+          <FinalPage game={game} timer={timer} />
         </div>
       );
     } else {
@@ -221,7 +219,11 @@ export default function Game(props) {
     }
 
     if (typeof window !== "undefined") {
-      document.body.className = game?.settings?.theme + " bg-game bg-cover";
+      if (game?.is_final_round) {
+        document.body.className = game?.settings?.theme + " bg-fm bg-cover";
+      } else {
+        document.body.className = game?.settings?.theme + " bg-game bg-cover";
+      }
     }
     return (
       <>
