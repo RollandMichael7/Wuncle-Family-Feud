@@ -45,6 +45,17 @@
   font-display: swap;
 }
 
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
 .text-3d {
   text-shadow: 0 1px 0 #17202A, 0 2px 0 #17202A,
     0 7px 0 #17202A, 0 8px 0 #17202A,
@@ -82,8 +93,8 @@
 
 .final-round-cursor-container {
   z-index: 8;
-  width: 80px;
-  height: 90px;
+  width: 100%;
+  height: 85px;
   position: absolute;
   right: 0px;
   display: flex;
@@ -93,20 +104,31 @@
 }
 
 .final-round-cursor {
+  opacity: 0;
   position: absolute;
   background-image: url('/fm-cursor.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 90px;
-  width: 90px;
+  height: 85px;
+  width: 85px;
   left: 0px;
   
   top: -3px;
 }
 
 .final-round-cursor-container.revealed {
-  width: 90px;
+  width: 85px;
+}
+
+.final-round-cursor-container.revealed .final-round-cursor {
+  opacity: 1;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+.final-round-cursor-container.pts-revealed {
+  opacity: 0;
 }
 
 .final-round-timer {
@@ -133,6 +155,10 @@
 .final-round-answer {
   font-family: "feud";
   z-index: 6;
+}
+
+.final-round-answer-container {
+  background-color: white;
 }
 
 .answer-points {

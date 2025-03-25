@@ -202,9 +202,10 @@ export default function Game(props) {
     } else if (game.is_final_round) {
       gameSession = (
         <div>
-          <div className="fm-bg-overlay-container h-screen w-screen" style={{ zIndex: 5 }}>
-            <img className="fm-bg-overlay" src="fm-bg.png"></img>
-          </div>
+          <div
+            className="fm-bg-overlay-container h-screen w-screen"
+            style={{ zIndex: 5, backgroundColor: "black" }}
+          ></div>
           <div className="fm-bg-overlay-container h-screen w-screen">
             <img className="fm-bg-overlay" src="fm-bg-transparent.png"></img>
           </div>

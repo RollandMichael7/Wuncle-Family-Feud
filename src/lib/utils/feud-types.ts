@@ -56,6 +56,7 @@ export interface FinalRoundQuestion {
   points: number;
   question: string;
   revealed: boolean;
+  points_revealed: boolean;
   selection: number;
 }
 

@@ -143,6 +143,7 @@ function FinalRoundButtonControls(props) {
           className="grow rounded border-4 bg-secondary-300 p-5 text-2xl text-foreground"
           id={`finalRoundAnswers${i}SubmitButton`}
           onClick={() => {
+            x.points_revealed = true;
             x.points = x.selection !== 0 ? x.answers[x.selection - 1][1] : 0;
             props.setGame((prv) => ({ ...prv }));
             props.send({ action: "data", data: props.game });
@@ -939,8 +940,14 @@ export default function AdminPage(props) {
                           className={`rounded border-4 bg-secondary-300 p-5 text-3xl ${timerStarted ? "opacity-50" : ""}`}
                           disabled={timerStarted}
                           onClick={() => {
-                            game.final_round.forEach((q) => (q.revealed = true));
-                            game.final_round_2.forEach((q) => (q.revealed = false));
+                            game.final_round.forEach((q) => {
+                              q.revealed = true;
+                              q.points_revealed = true;
+                            });
+                            game.final_round_2.forEach((q) => {
+                              q.revealed = false;
+                              q.points_revealed = false;
+                            });
                             game.is_final_round = true;
                             game.hide_first_round = false;
                             game.is_final_second = false;

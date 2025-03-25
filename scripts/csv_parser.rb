@@ -154,7 +154,8 @@ class CSVParser
           selection: -1,
           points: 0,
           input: "",
-          revealed: false
+          revealed: false,
+          points_revealed: false
         }
         until i > r.length()
           if i == 0

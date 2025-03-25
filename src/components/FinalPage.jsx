@@ -16,11 +16,11 @@ export default function FinalPage(props) {
   });
   return (
     <div class="w-full">
-      <div className="flex items-center justify-between" style={{ marginTop: "16.5rem", padding: "0 19rem" }}>
-        <div style={{ width: "48%" }}>
+      <div className="flex items-center justify-between" style={{ marginTop: "15.75rem", padding: "0 17.6rem" }}>
+        <div style={{ width: "48.75%", paddingLeft: 5 }}>
           <FinalRoundAnswers roundNumber={1} questions={props.game.final_round} />
         </div>
-        <div style={{ width: "48%" }}>
+        <div style={{ width: "48.5%" }}>
           <FinalRoundAnswers roundNumber={2} questions={props.game.final_round_2} />
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function FinalPage(props) {
         <p
           id="finalRoundTotalPointsText"
           className="font-bold uppercase"
-          style={{ fontSize: "4rem", color: "white", marginRight: "20rem", marginTop: "7.5rem", zIndex: 20 }}
+          style={{ fontSize: "4rem", color: "white", marginRight: "20rem", marginTop: "6.75rem", zIndex: 20 }}
         >
           {t("number", { count: total })}
         </p>

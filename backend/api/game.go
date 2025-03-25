@@ -59,6 +59,7 @@ type finalRound struct {
 	Points    int    `json:"points"`
 	Input     string `json:"input"`
 	Revealed  bool   `json:"revealed"`
+	PointsRevealed  bool   `json:"points_revealed"`
 }
 
 type game struct {
