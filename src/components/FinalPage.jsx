@@ -30,7 +30,7 @@ export default function FinalPage(props) {
         <p
           id="finalRoundTotalPointsText"
           className="font-bold uppercase"
-          style={{ fontSize: "4rem", color: "white", marginRight: "20rem", marginTop: "6.75rem", zIndex: 20 }}
+          style={{ fontSize: "4rem", color: "white", marginRight: "18rem", marginTop: "6.8rem", zIndex: 20 }}
         >
           {t("number", { count: total })}
         </p>

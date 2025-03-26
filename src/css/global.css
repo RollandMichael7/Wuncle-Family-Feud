@@ -56,6 +56,11 @@
   }
 }
 
+.anim-blink {
+  animation: blink-animation .75s steps(5, start) infinite;
+  -webkit-animation: blink-animation .75s steps(5, start) infinite;
+}
+
 .text-3d {
   text-shadow: 0 1px 0 #17202A, 0 2px 0 #17202A,
     0 7px 0 #17202A, 0 8px 0 #17202A,
@@ -99,7 +104,7 @@
   right: 0px;
   display: flex;
   align-items: center;
-  transition: all 1s;
+  transition: width 1s;
   background: black;
 }
 
@@ -123,8 +128,6 @@
 
 .final-round-cursor-container.revealed .final-round-cursor {
   opacity: 1;
-  animation: blink-animation 1s steps(5, start) infinite;
-  -webkit-animation: blink-animation 1s steps(5, start) infinite;
 }
 
 .final-round-cursor-container.pts-revealed {

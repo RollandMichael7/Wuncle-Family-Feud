@@ -15,6 +15,14 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
     textFit(document.getElementsByClassName("final-round-answer"), { multiLine: true, detectMultiLine: false });
   }, [questions]);
 
+  setTimeout(() => {
+    questions.forEach((q, i) => {
+      if (q.revealed) {
+        document.getElementById(`cursor-${roundNumber}-${i}`)?.classList.add("anim-blink");
+      }
+    });
+  }, 900);
+
   return questions.map((x, i) => (
     <div
       key={`final-round-answers-${i}`}
@@ -27,7 +35,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
       <div
         className={`final-round-cursor-container ${x.revealed ? "revealed" : ""} ${x.points_revealed ? "pts-revealed" : ""}`}
       >
-        <span className="final-round-cursor"></span>
+        <span id={`cursor-${roundNumber}-${i}`} className="final-round-cursor"></span>
       </div>
       <div
         className="flex items-center bg-fastm-holder font-extrabold uppercase"
