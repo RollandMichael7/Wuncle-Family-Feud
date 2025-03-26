@@ -12,16 +12,21 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
   const { t } = useTranslation();
 
   useEffect(() => {
-    textFit(document.getElementsByClassName("final-round-answer"), { multiLine: true, detectMultiLine: false });
+    textFit(document.getElementsByClassName("final-round-answer"), {
+      multiLine: true,
+      detectMultiLine: false,
+      alignVert: true,
+    });
   }, [questions]);
 
+  // start blinking cursor after it reaches point value at end of answer
   setTimeout(() => {
     questions.forEach((q, i) => {
       if (q.revealed) {
         document.getElementById(`cursor-${roundNumber}-${i}`)?.classList.add("anim-blink");
       }
     });
-  }, 900);
+  }, 500);
 
   return questions.map((x, i) => (
     <div
@@ -39,19 +44,19 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
       </div>
       <div
         className="flex items-center bg-fastm-holder font-extrabold uppercase"
-        style={{ height: 80, minWidth: 0, marginBottom: "2rem", width: "84%", position: "relative" }}
+        style={{ height: 85, minWidth: 0, marginBottom: "1.65rem", width: "84%", position: "relative" }}
       >
         <p
           id={`finalRound${roundNumber}Answer${i}Text`}
           className="final-round-answer text-fastm-text"
-          style={{ height: 80, width: "100%" }}
+          style={{ height: 85, width: "100%", marginLeft: 10, marginRight: 10 }}
         >
           {x.revealed ? x.input : ""}
         </p>
       </div>
       <div
         className="flex items-center justify-center bg-fastm-holder font-extrabold uppercase text-fastm-text"
-        style={{ width: "12%", height: 80, zIndex: 6, paddingRight: 10 }}
+        style={{ width: "12%", height: 85, zIndex: 6, paddingRight: 10 }}
       >
         {x.revealed && (
           <p id={`finalRound${roundNumber}PointsTotalText`} style={{ fontSize: "3.5rem", margin: 0 }}>

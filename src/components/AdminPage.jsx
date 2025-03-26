@@ -148,7 +148,7 @@ function FinalRoundButtonControls(props) {
             props.setGame((prv) => ({ ...prv }));
             props.send({ action: "data", data: props.game });
             props.send({
-              action: x.selection !== 0 ? "final_submit" : "mistake",
+              action: "final_submit",
               data: { numMistakes: 1 },
             });
           }}
