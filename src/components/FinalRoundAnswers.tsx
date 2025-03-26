@@ -43,7 +43,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
         <span id={`cursor-${roundNumber}-${i}`} className="final-round-cursor"></span>
       </div>
       <div
-        className="flex items-center bg-fastm-holder font-extrabold uppercase"
+        className="flex items-center bg-fastm-holder font-bold uppercase"
         style={{ height: 85, minWidth: 0, marginBottom: "1.65rem", width: "84%", position: "relative" }}
       >
         <p
@@ -55,7 +55,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundN
         </p>
       </div>
       <div
-        className="flex items-center justify-center bg-fastm-holder font-extrabold uppercase text-fastm-text"
+        className="flex items-center justify-center bg-fastm-holder font-bold uppercase text-fastm-text"
         style={{ width: "12%", height: 85, zIndex: 6, paddingRight: 10 }}
       >
         {x.revealed && (
