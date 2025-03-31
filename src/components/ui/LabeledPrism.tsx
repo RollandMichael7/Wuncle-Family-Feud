@@ -14,6 +14,9 @@ interface LabeledPrismProps {
   backLabel?: any;
   leftLabel?: any;
   topLabel?: any;
+  margins?: string;
+  faceClassName?: string;
+  sceneClassName?: string;
 }
 
 const LabeledPrism: React.FC<LabeledPrismProps> = ({
@@ -25,9 +28,12 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
   backLabel = "",
   leftLabel = "",
   topLabel = "",
+  faceClassName = "",
+  sceneClassName = "",
   width,
   height,
   depth,
+  margins,
 }) => {
   const showClass = `show-${PrismSide[currentSide].toLowerCase()}`;
 
@@ -68,7 +74,8 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
   const sceneStyles = {
     width: width,
     height: height,
-    margin: ".25rem",
+    margin: margins || ".25rem",
+    overflow: "hidden",
   };
 
   const prismStyles = {
@@ -77,33 +84,24 @@ const LabeledPrism: React.FC<LabeledPrismProps> = ({
   };
 
   return (
-    <div style={sceneStyles} className={`prism-scene ${isVisible ? "opacity-100" : "opacity-0"}`}>
-      <div style={prismStyles} className={`prism ${showClass}`}>
-        <div className="prism__face prism__face--front" style={frontBackStyle(true)}>
+    <div style={sceneStyles} className={`prism-scene ${sceneClassName} ${isVisible ? "opacity-100" : "opacity-0"}`}>
+      <div style={prismStyles} className={`prism ${showClass} ${sceneClassName}`}>
+        <div className={`prism__face prism__face--front ${faceClassName}`} style={frontBackStyle(true)}>
           {frontLabel}
         </div>
-        <div className="prism__face prism__face--back" style={frontBackStyle(false)}>
+        <div className={`prism__face prism__face--back ${faceClassName}`} style={frontBackStyle(false)}>
           {backLabel}
         </div>
-        <div
-          className="prism__face prism__face--right bg-gradient-to-t from-primary-900 to-primary-700"
-          style={leftRightStyle(false)}
-        >
+        <div className={`prism__face prism__face--right ${faceClassName}`} style={leftRightStyle(false)}>
           {rightLabel}
         </div>
-        <div
-          className="prism__face prism__face--left bg-gradient-to-t from-primary-900 to-primary-700"
-          style={leftRightStyle(true)}
-        >
+        <div className={`prism__face prism__face--left ${faceClassName}`} style={leftRightStyle(true)}>
           {leftLabel}
         </div>
-        <div className="prism__face prism__face--top" style={topBottomStyles(true)}>
+        <div className={`prism__face prism__face--top ${faceClassName}`} style={topBottomStyles(true)}>
           {topLabel}
         </div>
-        <div
-          className="prism__face prism__face--bottom bg-gradient-to-t from-primary-500 to-primary-700"
-          style={topBottomStyles(false)}
-        >
+        <div className={`prism__face prism__face--bottom ${faceClassName}`} style={topBottomStyles(false)}>
           {bottomLabel}
         </div>
       </div>

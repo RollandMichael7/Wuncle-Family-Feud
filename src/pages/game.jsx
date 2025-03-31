@@ -4,7 +4,10 @@ import QuestionBoard from "@/components/QuestionBoard";
 import Round from "@/components/Round";
 import TeamName from "@/components/TeamName";
 import TitlePage from "@/components/Title/TitlePage.jsx";
+import TitleSplash from "@/components/Title/TitleSplash";
+import LabeledPrism from "@/components/ui/LabeledPrism";
 import { ERROR_CODES } from "@/i18n/errorCodes";
+import { PrismSide } from "@/lib/utils/feud-types";
 import cookieCutter from "cookie-cutter";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -23,6 +26,7 @@ export default function Game(props) {
   const [numMistakes, setnumMistakes] = useState(0);
   const [isHost, setIsHost] = useState(false);
   const [buzzed, setBuzzed] = useState({});
+  const [displaySide, setDisplaySide] = useState(PrismSide.Front);
   const ws = useRef(null);
   let refreshCounter = 0;
 
@@ -195,44 +199,46 @@ export default function Game(props) {
     }, 1000);
   }, []);
 
-  if (game.teams != null) {
-    let gameSession;
-    if (game.title) {
-      gameSession = <TitlePage game={game} />;
-    } else if (game.is_final_round) {
-      gameSession = (
-        <div>
-          <div
-            className="fm-bg-overlay-container h-screen w-screen"
-            style={{ zIndex: 5, backgroundColor: "black" }}
-          ></div>
-          <div className="fm-bg-overlay-container h-screen w-screen">
-            <img className="fm-bg-overlay" src="fm-bg-transparent.png"></img>
-          </div>
-          <div className="flex h-screen w-screen justify-center">
-            <FinalPage game={game} timer={timer} />
-          </div>
-        </div>
-      );
-    } else {
-      gameSession = (
-        <div className="flex h-screen flex-col space-y-10 px-10 py-20">
-          <Round game={game} isGamePage={true} />
-          <QuestionBoard round={game.rounds[game.round]} />
-          {/* <div className="flex flex-row justify-around">
-            <TeamName game={game} team={0} />
-            <TeamName game={game} team={1} />
-          </div> */}
-        </div>
-      );
-    }
+  let splashFace = game && <TitleSplash game={game} />;
 
+  let gameFace = game.teams && game.rounds && (
+    <div className="flex h-screen flex-col space-y-10 bg-game bg-cover px-10 py-20">
+      <Round game={game} isGamePage={true} isVisible={displaySide == PrismSide.Right} />
+      <QuestionBoard round={game.rounds[game.round]} isVisible={displaySide == PrismSide.Right} />
+    </div>
+  );
+
+  let finalRoundFace = game && (
+    <div>
+      <div className="fm-bg-overlay-container h-screen w-screen" style={{ zIndex: 5, backgroundColor: "black" }}></div>
+      <div className="fm-bg-overlay-container h-screen w-screen">
+        <img className="fm-bg-overlay" src="fm-bg-transparent.png"></img>
+      </div>
+      <div className="flex h-screen w-screen justify-center">
+        <FinalPage game={game} timer={timer} isVisible={game.is_final_round} />
+      </div>
+    </div>
+  );
+
+  useEffect(() => {
+    if (game.title) {
+      setDisplaySide(PrismSide.Front);
+    } else if (game.is_final_round && displaySide != PrismSide.Left) {
+      setDisplaySide(PrismSide.Front);
+      setTimeout(() => {
+        setDisplaySide(PrismSide.Left);
+      }, 2000);
+    } else if (displaySide != PrismSide.Right) {
+      setDisplaySide(PrismSide.Front);
+      setTimeout(() => {
+        setDisplaySide(PrismSide.Right);
+      }, 2000);
+    }
+  }, [game]);
+
+  if (game.teams) {
     if (typeof window !== "undefined") {
-      if (game?.is_final_round) {
-        document.body.className = game?.settings?.theme;
-      } else {
-        document.body.className = game?.settings?.theme + " bg-game bg-cover";
-      }
+      document.body.className = game?.settings?.theme;
     }
     return (
       <>
@@ -268,7 +274,18 @@ export default function Game(props) {
         </div>
         <div className={`${game?.settings?.theme} min-h-screen`}>
           <div className="">
-            {gameSession}
+            <LabeledPrism
+              currentSide={displaySide}
+              frontLabel={splashFace}
+              leftLabel={finalRoundFace}
+              rightLabel={gameFace}
+              width={window.innerWidth}
+              height={window.innerHeight}
+              depth={window.innerWidth}
+              margins={"0px"}
+              sceneClassName={"splash"}
+              faceClassName={"splash"}
+            />
             {error !== "" ? <p className="text-2xl text-failure-700">{error}</p> : null}
           </div>
         </div>

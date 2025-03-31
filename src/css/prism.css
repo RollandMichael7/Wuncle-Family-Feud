@@ -1,4 +1,11 @@
 
+.splash.prism__face {
+  background: none;
+  border: none;
+}
+.splash.prism {
+  transition: transform 1s;
+}
 
 .prism {
   position: relative;
@@ -39,7 +46,7 @@
   color: white;
   text-align: center;
 }
-.prism__face::before {
+.prism__face:not(.splash)::before {
   background: none;
   border: 4px solid lightgray;
   content: "";

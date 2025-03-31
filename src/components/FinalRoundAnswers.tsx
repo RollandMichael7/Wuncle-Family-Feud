@@ -4,19 +4,22 @@ import { useTranslation } from "react-i18next";
 import textFit from "../lib/textfit.min.js";
 
 interface FinalRoundAnswersProps {
+  isVisible: boolean;
   questions: FinalRoundQuestion[];
   roundNumber: number;
 }
 
-const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ questions, roundNumber }) => {
+const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ isVisible, questions, roundNumber }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    textFit(document.getElementsByClassName("final-round-answer"), {
-      multiLine: true,
-      detectMultiLine: false,
-      alignVert: true,
-    });
+    if (isVisible) {
+      textFit(document.getElementsByClassName("final-round-answer"), {
+        multiLine: true,
+        detectMultiLine: false,
+        alignVert: true,
+      });
+    }
   }, [questions]);
 
   // start blinking cursor after it reaches point value at end of answer

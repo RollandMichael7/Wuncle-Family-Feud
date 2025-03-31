@@ -151,7 +151,7 @@
   border-radius: 50%;
 
   color: white;
-  font-size: 4em;
+  font-size: 4rem;
   text-align: center;
   background: radial-gradient(ellipse at center top, rgb(153,220,255) 0%, rgb(91,162,253) 19%, rgb(2,58,156) 70%);
 }
@@ -198,7 +198,7 @@
   border-radius: 50%;
 
   color: white;
-  font-size: 4em;
+  font-size: 5rem;
   text-align: center;
   background: radial-gradient(ellipse at center top, rgb(153,220,255) 0%, rgb(91,162,253) 19%, rgb(2,58,156) 70%);
 }
@@ -211,7 +211,7 @@
   border: 6px solid whitesmoke;
 
   color: white;
-  font-size: 4em;
+  font-size: 4rem;
   text-align: center;
   background: rgb(2,58,156);
 }
@@ -227,7 +227,7 @@
   padding: 0px 4rem;
 
   color: white;
-  font-size: 10em;
+  font-size: 10rem;
   text-align: center;
 }
 

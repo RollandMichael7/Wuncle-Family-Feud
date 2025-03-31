@@ -87,35 +87,30 @@ export default function Round(props) {
   let current_round = props.game.round;
   let round = props.game.rounds[current_round];
   return (
-    <div className="flex w-auto flex-col items-center space-y-1">
-      <div className={`flex h-28 flex-row justify-between ${props.isGamePage ? "w-screen" : "w-full"}`}>
-        <RoundPointTally points={props.game.teams[0].points} team={1} isGamePage={props.isGamePage} />
-        <RoundPointTally
-          points={props.game.point_tracker[props.game.round]}
-          team="total"
-          isGamePage={props.isGamePage}
-        />
-        <RoundPointTally points={props.game.teams[1].points} team={2} isGamePage={props.isGamePage} />
-      </div>
-
-      <div className="flex flex-row justify-center">
-        {round.multiply > 1 ? (
-          <div>
-            <p id="roundMultiplyText" className="text-start text-2xl text-foreground">
-              x{t("number", { count: round.multiply })}
-            </p>
+    <div>
+      {props.isVisible && (
+        <div className="flex w-auto flex-col items-center space-y-1">
+          <div className={`flex h-28 flex-row justify-between ${props.isGamePage ? "w-screen" : "w-full"}`}>
+            <RoundPointTally points={props.game.teams[0].points} team={1} isGamePage={props.isGamePage} />
+            <RoundPointTally
+              points={props.game.point_tracker[props.game.round]}
+              team="total"
+              isGamePage={props.isGamePage}
+            />
+            <RoundPointTally points={props.game.teams[1].points} team={2} isGamePage={props.isGamePage} />
           </div>
-        ) : null}
-      </div>
-      <div className="flex flex-row justify-center">
-        {props.game.settings.hide_questions === false ? (
-          <p id="roundQuestionText" className="sm:text-1xl text-end text-2xl text-foreground">
-            {round.question}
-          </p>
-        ) : (
-          <></>
-        )}
-      </div>
+
+          <div className="flex flex-row justify-center">
+            {props.game.settings.hide_questions === false ? (
+              <p id="roundQuestionText" className="sm:text-1xl text-end text-2xl text-foreground">
+                {round.question}
+              </p>
+            ) : (
+              <></>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
