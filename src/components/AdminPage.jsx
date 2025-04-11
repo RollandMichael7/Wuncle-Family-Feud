@@ -630,6 +630,7 @@ export default function AdminPage(props) {
                     className="grow rounded border-4 bg-secondary-300 p-10 text-2xl text-foreground"
                     onClick={() => {
                       game.title = false;
+                      game.show_timer = false;
                       game.is_final_round = true;
                       game.is_final_second = false;
                       props.setGame((prv) => ({ ...prv }));
@@ -919,6 +920,7 @@ export default function AdminPage(props) {
                         onClick={() => {
                           console.debug(game);
                           //game.final_round.forEach((q) => q.revealed = false);
+                          game.show_timer = false;
                           game.is_final_second = true;
                           game.hide_first_round = true;
                           props.setGame((prv) => ({ ...prv }));
@@ -994,12 +996,30 @@ export default function AdminPage(props) {
                         ) : null}
                       </div>
                     )}
+
+                    {/* SHOW TIMER */}
                     <div className="flex px-2">
+                      <button
+                        id="showTimerButton"
+                        className={`rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground`}
+                        onClick={() => {
+                          game.show_timer = true;
+                          props.setGame((prv) => ({ ...prv }));
+                          console.log(game);
+                          send({ action: "data", data: game });
+                          send({
+                            action: "final_clock_reveal",
+                          });
+                        }}
+                      >
+                        {t("Show Timer")}
+                      </button>
+
                       {!timerStarted ? (
                         /* START TIMER */
                         <button
                           id="startTimerButton"
-                          className={`rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground ${timerCompleted ? "opacity-50" : ""}`}
+                          className={`ml-2 rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground ${timerCompleted ? "opacity-50" : ""}`}
                           disabled={timerCompleted}
                           onClick={() => {
                             if (game.is_final_second) {
@@ -1023,7 +1043,7 @@ export default function AdminPage(props) {
                         /* STOP TIMER */
                         <button
                           id="stopTimerButton"
-                          className="rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground"
+                          className="ml-2 rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground"
                           onClick={() => {
                             send({ action: "stop_timer" });
                             setTimerStarted(false);

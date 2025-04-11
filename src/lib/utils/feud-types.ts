@@ -13,6 +13,7 @@ export interface Game {
   final_round2: FinalRoundQuestion[];
   final_round_timers: number[];
   hide_first_round: boolean;
+  show_timer: boolean;
   is_final_round: boolean;
   is_final_second: boolean;
   point_tracker: number[];

@@ -6,6 +6,8 @@ export default function FinalPage(props) {
   const { t } = useTranslation();
   let total = 0;
 
+  console.log(props.game);
+
   props.game.final_round.forEach((round) => {
     console.debug("round one total: ");
     total = total + parseInt(round.points);
@@ -33,12 +35,18 @@ export default function FinalPage(props) {
               {t("number", { count: total })}
             </p>
           </div>
+
           {/* Timer */}
-          <div className="final-round-timer">
-            <p id="finalRoundTimerLabel" className="text-shadow font-bold uppercase" style={{ fontSize: "6rem" }}>
-              <span id="finalRoundTimerValue">{t("number", { count: props.timer })}</span>
-            </p>
-          </div>
+          {/* TODO: make show_timer work */}
+          {
+            /* {props.game.show_timer && ( */ true && (
+              <div className="final-round-timer">
+                <p id="finalRoundTimerLabel" className="text-shadow font-bold uppercase" style={{ fontSize: "6rem" }}>
+                  <span id="finalRoundTimerValue">{t("number", { count: props.timer })}</span>
+                </p>
+              </div>
+            )
+          }
 
           {/* WIN TEXT */}
           <div className="text-center">

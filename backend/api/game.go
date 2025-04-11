@@ -72,6 +72,7 @@ type game struct {
 	Title             bool                         `json:"title"`
 	TitleText         string                       `json:"title_text"`
 	PointTracker      []int                        `json:"point_tracker"`
+	ShowTimer	      bool                         `json:"show_timer"`
 	IsFinalRound      bool                         `json:"is_final_round"`
 	IsFinalSecond     bool                         `json:"is_final_second"`
 	HideFirstRound    bool                         `json:"hide_first_round"`

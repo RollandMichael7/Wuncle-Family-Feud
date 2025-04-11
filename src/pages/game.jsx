@@ -74,6 +74,7 @@ export default function Game(props) {
       let json = JSON.parse(received_msg);
       console.debug(json);
       if (json.action === "data") {
+        console.log(json);
         if (Object.keys(buzzed).length === 0 && json.data.buzzed.length > 0) {
           let userId = json.data.buzzed[0].id;
           let user = json.data.registeredPlayers[userId];
@@ -122,7 +123,7 @@ export default function Game(props) {
         var audio = new Audio("fm-answer-reveal.mp3");
         audio.play();
       } else if (json.action === "final_clock_reveal") {
-        var audio = new Audio("fm-clock-reveal.mp3");
+        var audio = new Audio("fm-clock-reveal.wav");
         audio.play();
       } else if (json.action === "duplicate") {
         var audio = new Audio("duplicate.mp3");
@@ -140,7 +141,7 @@ export default function Game(props) {
             if (prevTimer > 0) {
               return prevTimer - 1;
             } else {
-              var audio = new Audio("try-again.mp3");
+              var audio = new Audio("fm-clock-end.wav");
               audio.play();
               clearInterval(timerInterval);
 
