@@ -226,12 +226,14 @@ export default function Game(props) {
   );
 
   var splashAndSwitch = (side) => {
+    var whoosh = new Audio("whoosh.wav");
     setIsSwitching(true);
     setTimeout(() => {
       setDisplaySide(PrismSide.Front);
     }, 1000);
     setTimeout(() => {
       setDisplaySide(side);
+      whoosh.play();
     }, 2000);
     // setTimeout(() => {
     //   setIsSwitching(false);
