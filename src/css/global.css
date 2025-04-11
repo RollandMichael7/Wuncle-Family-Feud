@@ -56,6 +56,12 @@
   }
 }
 
+.game-video-bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 .anim-blink {
   animation: blink-animation 0.75s steps(2, start) infinite;
   -webkit-animation: blink-animation 0.75s steps(2, start) infinite;
