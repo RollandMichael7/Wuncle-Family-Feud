@@ -27,6 +27,7 @@ export default function Game(props) {
   const [isHost, setIsHost] = useState(false);
   const [buzzed, setBuzzed] = useState({});
   const [displaySide, setDisplaySide] = useState(PrismSide.Front);
+  const [isSwitching, setIsSwitching] = useState(false);
   const ws = useRef(null);
   let refreshCounter = 0;
 
@@ -199,40 +200,47 @@ export default function Game(props) {
     }, 1000);
   }, []);
 
-  let splashFace = game && <TitleSplash game={game} />;
+  let splashFace = game && (isSwitching || game.title) && <TitleSplash game={game} />;
 
-  let gameFace = game.teams && game.rounds && (
+  let gameFace = game && game.rounds && game.teams && (isSwitching || (!game.title && !game.is_final_round)) && (
     <div className="flex h-screen flex-col space-y-10 bg-game bg-cover px-10 py-20">
-      <Round game={game} isGamePage={true} isVisible={displaySide == PrismSide.Right} />
-      <QuestionBoard round={game.rounds[game.round]} isVisible={displaySide == PrismSide.Right} />
+      <Round game={game} isGamePage={true} isVisible={isSwitching || displaySide == PrismSide.Right} />
+      <QuestionBoard round={game.rounds[game.round]} isVisible={isSwitching || displaySide == PrismSide.Right} />
     </div>
   );
 
-  let finalRoundFace = game && (
+  let finalRoundFace = game && (isSwitching || game.is_final_round) && (
     <div>
       <div className="fm-bg-overlay-container h-screen w-screen" style={{ zIndex: 5, backgroundColor: "black" }}></div>
       <div className="fm-bg-overlay-container h-screen w-screen">
         <img className="fm-bg-overlay" src="fm-bg-transparent.png"></img>
       </div>
       <div className="flex h-screen w-screen justify-center">
-        <FinalPage game={game} timer={timer} isVisible={game.is_final_round} />
+        <FinalPage game={game} timer={timer} isVisible={isSwitching || displaySide == PrismSide.Left} />
       </div>
     </div>
   );
 
+  var splashAndSwitch = (side) => {
+    setIsSwitching(true);
+    setTimeout(() => {
+      setDisplaySide(PrismSide.Front);
+    }, 1000);
+    setTimeout(() => {
+      setDisplaySide(side);
+    }, 2000);
+    // setTimeout(() => {
+    //   setIsSwitching(false);
+    // }, 3000);
+  };
+
   useEffect(() => {
     if (game.title) {
-      setDisplaySide(PrismSide.Front);
+      splashAndSwitch(PrismSide.Front);
     } else if (game.is_final_round && displaySide != PrismSide.Left) {
-      setDisplaySide(PrismSide.Front);
-      setTimeout(() => {
-        setDisplaySide(PrismSide.Left);
-      }, 2000);
-    } else if (displaySide != PrismSide.Right) {
-      setDisplaySide(PrismSide.Front);
-      setTimeout(() => {
-        setDisplaySide(PrismSide.Right);
-      }, 2000);
+      splashAndSwitch(PrismSide.Left);
+    } else if (!game.is_final_round && displaySide != PrismSide.Right) {
+      splashAndSwitch(PrismSide.Right);
     }
   }, [game]);
 

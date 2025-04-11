@@ -17,28 +17,24 @@ export default function FinalPage(props) {
   return (
     <div>
       {props.isVisible && (
-        <div class="w-full">
-          <div className="flex items-center justify-between" style={{ marginTop: "15.75rem", padding: "0 17.6rem" }}>
-            <div style={{ width: "48.75%", paddingLeft: 5 }}>
-              <FinalRoundAnswers roundNumber={1} questions={props.game.final_round} />
+        <div class="w-screen">
+          <div className="flex items-center justify-between" style={{ marginTop: "15.7rem", padding: "0 17.65rem" }}>
+            <div style={{ width: "48.75%" }}>
+              <FinalRoundAnswers roundNumber={1} questions={props.game.final_round} isVisible={props.isVisible} />
             </div>
-            <div style={{ width: "48.5%" }}>
-              <FinalRoundAnswers roundNumber={2} questions={props.game.final_round_2} />
+            <div style={{ width: "49%" }}>
+              <FinalRoundAnswers roundNumber={2} questions={props.game.final_round_2} isVisible={props.isVisible} />
             </div>
           </div>
 
           {/* Total */}
           <div className="flex w-full justify-end" style={{ zIndex: 20 }}>
-            <p
-              id="finalRoundTotalPointsText"
-              className="font-bold uppercase"
-              style={{ fontSize: "4rem", color: "white", marginRight: "18rem", marginTop: "7rem", zIndex: 20 }}
-            >
+            <p id="finalRoundTotalPointsText" className="final-round-total font-bold uppercase">
               {t("number", { count: total })}
             </p>
           </div>
           {/* Timer */}
-          <div className="final-round-timer" style={{ marginTop: "0.5rem" }}>
+          <div className="final-round-timer">
             <p id="finalRoundTimerLabel" className="text-shadow font-bold uppercase" style={{ fontSize: "6rem" }}>
               <span id="finalRoundTimerValue">{t("number", { count: props.timer })}</span>
             </p>

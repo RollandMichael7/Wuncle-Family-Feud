@@ -135,10 +135,31 @@
   opacity: 0;
 }
 
+.final-round-total {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  position: fixed;
+  height: 10%;
+  width: 10%;
+  bottom: 10.5rem;
+  right: 18.5rem;
+
+  font-size: 4rem;
+  color: "white";
+  z-index: 20;
+}
+
 .final-round-timer {
   z-index: 20;
   font-family: "feud";
-  position: relative;
+  
+  position: fixed;
+  height: 10%;
+  width: 10%;
+  bottom: 0.75rem;
+  left: 45%;
   
   display: flex;
   justify-content: center;
@@ -157,8 +178,18 @@
 }
 
 .final-round-answer {
+  position: relative;
+  display: flex;
+  align-items: center;
   font-family: "feud";
   z-index: 6;
+  height: 90px;
+}
+
+.bg-fastm-holder {
+  display: flex;
+  align-items: center;
+  height: 90px;
 }
 
 .final-round-answer-container {
