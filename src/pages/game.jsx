@@ -121,14 +121,14 @@ export default function Game(props) {
       } else if (json.action === "final_reveal") {
         var audio = new Audio("fm-answer-reveal.mp3");
         audio.play();
+      } else if (json.action === "final_clock_reveal") {
+        var audio = new Audio("fm-clock-reveal.mp3");
+        audio.play();
       } else if (json.action === "duplicate") {
         var audio = new Audio("duplicate.mp3");
         audio.play();
       } else if (json.action === "final_submit") {
-        var audio = new Audio("good-answer.wav");
-        audio.play();
-      } else if (json.action === "final_wrong") {
-        var audio = new Audio("try-again.mp3");
+        var audio = json.data.points > 0 ? new Audio("fm-good-answer.wav") : new Audio("fm-wrong.wav");
         audio.play();
       } else if (json.action === "set_timer") {
         setTimer(json.data);

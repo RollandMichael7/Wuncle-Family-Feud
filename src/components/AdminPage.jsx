@@ -149,7 +149,7 @@ function FinalRoundButtonControls(props) {
             props.send({ action: "data", data: props.game });
             props.send({
               action: "final_submit",
-              data: { numMistakes: 1 },
+              data: { points: x.points },
             });
           }}
         >
