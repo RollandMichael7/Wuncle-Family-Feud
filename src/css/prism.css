@@ -7,6 +7,70 @@
   transition: transform 1s;
 }
 
+.wipe-transition {
+  /* background: linear-gradient(-90deg,rgb(153,220,255), rgb(91,162,253), rgb(2,58,156));
+	background-size: 400% 400%;
+	animation: gradient 2s ease infinite; */
+ 
+  z-index: 100;
+  animation: gradient 0.5s linear infinite;
+  background: radial-gradient(
+    closest-side circle at center,
+    hsl(4 5% 100% / 100%) 0%,
+    hsl(4 5% 100% / 100%) 15%,
+    hsl(4 10% 70% / 70%) 30%,
+    hsl(4 0% 50% / 30%) 55%,
+    hsl(4 0% 10% / 5%) 75%
+  );
+  background-size: 250% 200%;
+  filter: blur(4px);
+}
+
+@keyframes flare {
+  0% {
+    background: radial-gradient(
+      closest-side circle at center,
+      hsl(4 5% 100% / 100%) 0%,
+      hsl(4 5% 100% / 100%) 15%,
+      hsl(4 10% 70% / 70%) 30%,
+      hsl(4 0% 50% / 30%) 55%,
+      hsl(4 0% 10% / 5%) 75%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      closest-side circle at center,
+      hsl(4 5% 100% / 100%) 0%,
+      hsl(4 5% 100% / 100%) 15%,
+      hsl(4 10% 70% / 70%) 30%,
+      hsl(4 0% 50% / 30%) 55%,
+      hsl(4 0% 10% / 5%) 75%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      closest-side circle at center,
+      hsl(4 5% 100% / 100%) 0%,
+      hsl(4 5% 100% / 100%) 15%,
+      hsl(4 10% 70% / 70%) 30%,
+      hsl(4 0% 50% / 30%) 55%,
+      hsl(4 0% 10% / 5%) 75%
+    );
+  }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 50% 50%;
+	}
+	100% {
+		background-position: -50% 50%;
+	}
+}
+
 .prism {
   position: relative;
   transform-style: preserve-3d;
@@ -29,6 +93,7 @@
     color: white;
     font-size: 2em;
     text-align: center;
+    transition: opacity 0.5s;
 }
 
 .prism.show-front  { transform: rotateY(   0deg); }

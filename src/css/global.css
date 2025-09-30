@@ -204,6 +204,7 @@
 
 .answer-points {
   background: linear-gradient(1turn, rgb(var(--colors-primary-1100)) 30%, 60%, rgb(var(--colors-primary-100)));
+  transition: all 1s;
 }
 
 .points-container {

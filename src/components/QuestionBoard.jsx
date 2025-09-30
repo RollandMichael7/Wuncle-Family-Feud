@@ -1,11 +1,29 @@
 import { useTranslation } from "react-i18next";
 import "@/i18n/i18n";
+import { useEffect, useState } from "react";
 import AnswerPrism from "./AnswerPrism";
 
-const MAX_NUM_ANSWERS = 8;
+export const MAX_NUM_ANSWERS = 8;
 
 export default function QuestionBoard(props) {
   const { t } = useTranslation();
+  var numPlays = 0;
+
+  useEffect(() => {
+    if (props.isVisible) {
+      setTimeout(() => {
+        var audio = new Audio("tch.wav");
+        audio.addEventListener("ended", () => {
+          console.log("errm hello");
+          if (numPlays < props.round.answers.length) {
+            numPlays++;
+            audio.play();
+          }
+        });
+        audio.play();
+      }, 300);
+    }
+  }, [props.round.question, props.isVisible]);
 
   return (
     <div>

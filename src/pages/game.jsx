@@ -230,11 +230,11 @@ export default function Game(props) {
     setIsSwitching(true);
     setTimeout(() => {
       setDisplaySide(PrismSide.Front);
-    }, 1000);
+    }, 0);
     setTimeout(() => {
       setDisplaySide(side);
       whoosh.play();
-    }, 2000);
+    }, 0);
     // setTimeout(() => {
     //   setIsSwitching(false);
     // }, 3000);
