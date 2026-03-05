@@ -1,0 +1,237 @@
+{
+  "rounds": [
+    {
+      "answers": [
+        {
+          "ans": "Clothes/Shoes",
+          "pnt": 23
+        },
+        {
+          "ans": "Phone Numbers",
+          "pnt": 20
+        },
+        {
+          "ans": "Stories/Gossip",
+          "pnt": 19
+        },
+        {
+          "ans": "Spit/Germs",
+          "pnt": 14
+        },
+        {
+            "ans": "Books",
+            "pnt": 11
+        },
+        {
+            "ans": "Recipes",
+            "pnt": 8
+        }
+      ],
+      "multiply": 1,
+      "question": "Name something people swap."
+    },
+    {
+      "answers": [
+        {
+          "ans": "Swiss Cheese",
+          "pnt": 40
+        },
+        {
+          "ans": "Clothes/Socks",
+          "pnt": 16
+        },
+        {
+          "ans": "Alibi/Story",
+          "pnt": 14
+        },
+        {
+          "ans": "Net/Fishing Net",
+          "pnt": 9
+        },
+        {
+            "ans": "Colander/Strainer",
+            "pnt": 8
+        },
+        {
+            "ans": "Golf Course",
+            "pnt": 2
+        },
+        {
+            "ans": "Road/Street",
+            "pnt": 2
+        }
+      ],
+      "multiply": 2,
+      "question": "Name something that might be full of holes"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Water/Toilet",
+          "pnt": 37
+        },
+        {
+          "ans": "Engine/Car",
+          "pnt": 24
+        },
+        {
+          "ans": "Refrigerator",
+          "pnt": 10
+        },
+        {
+          "ans": "Nose",
+          "pnt": 8
+        },
+        {
+          "ans": "Pantyhose",
+          "pnt": 8
+        },
+        {
+            "ans": "Clock",
+            "pnt": 3
+        }
+      ],
+      "multiply": 3,
+      "question": "Other than feet, name something that runs"
+    }
+  ],
+  "final_round": [
+    {
+      "answers": [
+        [
+          "Water",
+          44
+        ],
+        [
+          "Soap",
+          25
+        ],
+        [
+          "Rubber Duck",
+          10
+        ],
+        [
+          "Shampoo",
+          7
+        ],
+        [
+          "Bubbles",
+          5
+        ]
+      ],
+      "question": "Name something that you might find in a bathtub."
+    },
+    {
+      "answers": [
+        [
+          "Fangs",
+          44
+        ],
+        [
+          "Cape",
+          25
+        ],
+        [
+          "Garlic",
+          10
+        ],
+        [
+          "Cross",
+          7
+        ],
+        [
+            "Stake",
+            5
+        ]
+      ],
+      "question": "Name something associated with vampires."
+    },
+    {
+      "answers": [
+        [
+          "Clothing",
+          36
+        ],
+        [
+          "Skin",
+          20
+        ],
+        [
+          "Cake",
+          17
+        ],
+        [
+          "Fat",
+          14
+        ],
+        [
+            "Hair",
+            5
+        ],
+        [
+            "Blanket",
+            3
+        ]
+      ],
+      "question": "Name something you can have layers of."
+    },
+    {
+      "answers": [
+        [
+          "Sloppy Joes",
+          43
+        ],
+        [
+          "Spaghetti",
+          22
+        ],
+        [
+          "Soup/Chili",
+          6
+        ],
+        [
+          "Ribs",
+          6
+        ],
+        [
+          "Pizza",
+          5
+        ]
+      ],
+      "question": "Name a food that's sloppy to eat."
+    },
+    {
+      "answers": [
+        [
+          "Food",
+          29
+        ],
+        [
+          "Wait",
+          16
+        ],
+        [
+          "Cost",
+          14
+        ],
+        [
+          "Smell",
+          12
+        ],
+        [
+          "Service",
+          10
+        ],
+        [
+          "Nurses",
+          4
+        ]
+      ],
+      "question": "Name a complaint people have about hospitals."
+    }
+  ],
+  "final_round_timers": [
+    20,
+    25
+  ]
+}

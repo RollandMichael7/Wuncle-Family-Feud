@@ -1,0 +1,249 @@
+{
+  "rounds": [
+    {
+      "answers": [
+        {
+          "ans": "Monkey/ape",
+          "pnt": 23
+        },
+        {
+          "ans": "Dog",
+          "pnt": 21
+        },
+        {
+          "ans": "Cat",
+          "pnt": 16
+        },
+        {
+          "ans": "Bird",
+          "pnt": 14
+        },
+        {
+            "ans": "Elephant",
+            "pnt": 4
+        },
+        {
+            "ans": "Kangaroo",
+            "pnt": 4
+        },
+        {
+            "ans": "Rabbit",
+            "pnt": 4
+        }
+      ],
+      "multiply": 1,
+      "question": "Name an animal that's easy to imitate in charades."
+    },
+    {
+      "answers": [
+        {
+          "ans": "Bathroom",
+          "pnt": 53
+        },
+        {
+          "ans": "Work",
+          "pnt": 21
+        },
+        {
+          "ans": "Hospital/Doctor/Dentist",
+          "pnt": 10
+        },
+        {
+          "ans": "Grocery Store",
+          "pnt": 5
+        },
+        {
+            "ans": "Court/Jury Duty",
+            "pnt": 4
+        },
+        {
+            "ans": "DMV",
+            "pnt": 4
+        }
+      ],
+      "multiply": 2,
+      "question": "Like it or not, name a place people have to go."
+    },
+    {
+      "answers": [
+        {
+          "ans": "Superman",
+          "pnt": 47
+        },
+        {
+          "ans": "Super bowl",
+          "pnt": 9
+        },
+        {
+          "ans": "Supermarket",
+          "pnt": 9
+        },
+        {
+          "ans": "Super glue",
+          "pnt": 6
+        },
+        {
+          "ans": "Superintendent",
+          "pnt": 6
+        },
+        {
+            "ans": "Supersize",
+            "pnt": 5
+        },
+        {
+            "ans": "Superstar",
+            "pnt": 5
+        }
+      ],
+      "multiply": 3,
+      "question": "Name something that has the word \"super\" in it."
+    }
+  ],
+  "final_round": [
+    {
+      "answers": [
+        [
+          "Freedom",
+          26
+        ],
+        [
+          "Peace",
+          25
+        ],
+        [
+          "Privacy",
+          17
+        ],
+        [
+          "Less to Clean",
+          13
+        ],
+        [
+          "Control of Food",
+          6
+        ],
+        [
+          "Control of Remote",
+          4
+        ]
+      ],
+      "question": "Name something that's good about living alone."
+    },
+    {
+      "answers": [
+        [
+          "Scream",
+          42
+        ],
+        [
+          "Talk to It",
+          24
+        ],
+        [
+          "Run",
+          18
+        ],
+        [
+          "Pray",
+          4
+        ],
+        [
+            "Faint",
+            3
+        ],
+        [
+            "Pinch Myself",
+            3
+        ]
+      ],
+      "question": "What would you do if you saw a ghost?"
+    },
+    {
+      "answers": [
+        [
+          "Burnt food",
+          37
+        ],
+        [
+          "Phone call",
+          11
+        ],
+        [
+          "Fight",
+          9
+        ],
+        [
+          "Snacking before",
+          7
+        ],
+        [
+            "Hair in food",
+            6
+        ],
+        [
+            "Guest is late",
+            4
+        ]
+      ],
+      "question": "Name something that can ruin dinner."
+    },
+    {
+      "answers": [
+        [
+          "Watch TV",
+          22
+        ],
+        [
+          "Snore",
+          17
+        ],
+        [
+          "Talk",
+          12
+        ],
+        [
+          "Walk",
+          7
+        ],
+        [
+          "Read",
+          6
+        ]
+      ],
+      "question": "Name an activity that many people do while half asleep."
+    },
+    {
+      "answers": [
+        [
+          "Reading",
+          30
+        ],
+        [
+          "Sleep",
+          29
+        ],
+        [
+          "Bills",
+          9
+        ],
+        [
+          "Housework/Chores",
+          8
+        ],
+        [
+          "Soap Opera/TV",
+          6
+        ],
+        [
+          "Work",
+          5
+        ]
+      ],
+      "question": "Name something you might catch up on."
+    }
+  ],
+  "final_round_timers": [
+    20,
+    25
+  ]
+}
