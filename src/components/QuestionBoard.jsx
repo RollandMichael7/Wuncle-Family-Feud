@@ -14,7 +14,6 @@ export default function QuestionBoard(props) {
       setTimeout(() => {
         var audio = new Audio("tch.wav");
         audio.addEventListener("ended", () => {
-          console.log("errm hello");
           if (numPlays < props.round.answers.length) {
             numPlays++;
             audio.play();

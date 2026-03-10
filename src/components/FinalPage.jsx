@@ -22,7 +22,11 @@ export default function FinalPage(props) {
         <div class="w-screen">
           <div className="flex items-center justify-between" style={{ marginTop: "15.7rem", padding: "0 17.65rem" }}>
             <div style={{ width: "48.75%" }}>
-              <FinalRoundAnswers roundNumber={1} questions={props.game.final_round} isVisible={props.isVisible} />
+              <FinalRoundAnswers
+                roundNumber={1}
+                questions={props.game.final_round}
+                isVisible={props.isVisible && !props.game.hide_first_round}
+              />
             </div>
             <div style={{ width: "49%" }}>
               <FinalRoundAnswers roundNumber={2} questions={props.game.final_round_2} isVisible={props.isVisible} />

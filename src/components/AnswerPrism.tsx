@@ -27,6 +27,9 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
   const labelId = `answer-label-${answerNum}`;
   //var playedSound = false;
 
+  const WIPE_TIME_MS = 333;
+  const WIPE_DELAY_MS = 275;
+
   useEffect(() => {
     textFit(document.getElementsByClassName("answer-text"), { multiLine: true, detectMultiLine: false });
     setDisplaySide(answer?.trig ? PrismSide.Back : PrismSide.Front);
@@ -45,12 +48,12 @@ const AnswerPrism: React.FC<AnswerPrismProps> = ({
 
         setTimeout(() => {
           containerElem.classList.remove("wipe-transition");
-        }, 500);
+        }, WIPE_TIME_MS);
         setTimeout(() => {
           labelElem.classList.remove("opacity-0");
           labelElem.classList.add("opacity-100");
-        }, 500);
-      }, answerNum * 275);
+        }, WIPE_TIME_MS);
+      }, answerNum * WIPE_DELAY_MS);
     }
   }, [answer?.ans]);
 

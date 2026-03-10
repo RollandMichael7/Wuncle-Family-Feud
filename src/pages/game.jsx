@@ -208,7 +208,7 @@ export default function Game(props) {
       <video loop autoPlay muted src="game-bg.mp4" className="game-video-bg"></video>
       <div className="flex h-screen flex-col space-y-10 bg-cover px-10 py-20">
         <Round game={game} isGamePage={true} isVisible={isSwitching || displaySide == PrismSide.Right} />
-        <QuestionBoard round={game.rounds[game.round]} isVisible={isSwitching || displaySide == PrismSide.Right} />
+        <QuestionBoard round={game.rounds[game.round]} isVisible={displaySide == PrismSide.Right} />
       </div>
     </div>
   );

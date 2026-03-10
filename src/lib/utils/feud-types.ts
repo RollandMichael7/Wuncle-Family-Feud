@@ -43,6 +43,7 @@ export interface RoundQuestion {
   answers: Answer[];
   multiply: number;
   question: string;
+  //isCompleted: boolean;
 }
 
 export interface Answer {

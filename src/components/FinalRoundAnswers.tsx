@@ -27,7 +27,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ isVisible, questi
   // start blinking cursor after it reaches point value at end of answer
   setTimeout(() => {
     questions.forEach((q, i) => {
-      if (q.revealed) {
+      if (isVisible && q.revealed) {
         document.getElementById(`cursor-${roundNumber}-${i}`)?.classList.add("anim-blink");
       }
     });
@@ -43,7 +43,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ isVisible, questi
       }}
     >
       <div
-        className={`final-round-cursor-container ${x.revealed ? "revealed" : ""} ${x.points_revealed ? "pts-revealed" : ""}`}
+        className={`final-round-cursor-container ${x.revealed && isVisible ? "revealed" : ""} ${x.points_revealed && isVisible ? "pts-revealed" : ""}`}
       >
         <span id={`cursor-${roundNumber}-${i}`} className="final-round-cursor"></span>
       </div>
@@ -56,7 +56,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ isVisible, questi
           className="final-round-answer text-fastm-text"
           style={{ textAlign: "left", width: "100%", marginLeft: 10, marginRight: 10 }}
         >
-          {x.revealed ? x.input : ""}
+          {x.revealed && isVisible ? x.input : ""}
         </p>
       </div>
       <div
@@ -65,7 +65,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ isVisible, questi
       >
         {x.revealed && (
           <p id={`finalRound${roundNumber}PointsTotalText`} style={{ fontSize: "3.5rem", margin: 0 }}>
-            {t("number", { count: x.points })}
+            {x.revealed && isVisible ? x.points : ""}
           </p>
         )}
       </div>
