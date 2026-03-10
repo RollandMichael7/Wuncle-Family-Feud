@@ -1,0 +1,273 @@
+{
+  "rounds": [
+    {
+      "answers": [
+        {
+          "ans": "Drinks",
+          "pnt": 63
+        },
+        {
+          "ans": "Flowers",
+          "pnt": 14
+        },
+        {
+          "ans": "Chips",
+          "pnt": 13
+        },
+        {
+          "ans": "Yourself",
+          "pnt": 7
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something You Bring To A Party Even If The Host Doesn't Ask You To Bring Anything"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Hats",
+          "pnt": 74
+        },
+        {
+          "ans": "Dress",
+          "pnt": 10
+        },
+        {
+          "ans": "Tux",
+          "pnt": 4
+        },
+        {
+          "ans": "New Clothes",
+          "pnt": 3
+        },
+        {
+          "ans": "Tiara",
+          "pnt": 2
+        },
+        {
+          "ans": "Jewlery",
+          "pnt": 2
+        },
+        {
+          "ans": "Glitter",
+          "pnt": 2
+        }
+      ],
+      "multiply": 1,
+      "question": "Name One Thing People Wear On New Year's."
+    },
+    {
+      "answers": [
+        {
+          "ans": "What's Up",
+          "pnt": 49
+        },
+        {
+          "ans": "Shut Up",
+          "pnt": 17
+        },
+        {
+          "ans": "Look Up",
+          "pnt": 15
+        },
+        {
+          "ans": "Heads Up",
+          "pnt": 7
+        },
+        {
+          "ans": "Screw Up",
+          "pnt": 4
+        },
+        {
+          "ans": "Straight Up",
+          "pnt": 4
+        },
+        {
+          "ans": "7 Up",
+          "pnt": 4
+        }
+      ],
+      "multiply": 2,
+      "question": "Name An Expression People Often Say That Ends With The Word \"Up.\""
+    },
+    {
+      "answers": [
+        {
+          "ans": "Dry Off",
+          "pnt": 51
+        },
+        {
+          "ans": "Go Out",
+          "pnt": 33
+        },
+        {
+          "ans": "Get Dressed",
+          "pnt": 22
+        },
+        {
+          "ans": "Turn It Off",
+          "pnt": 14
+        }
+      ],
+      "multiply": 3,
+      "question": "Name Something People Do After They Take A Shower"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Diapers",
+          "pnt": 59
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something New Mothers Worry They Will Run Out Of"
+    }
+  ],
+  "final_round": [
+    {
+      "answers": [
+        [
+          "Insomnia",
+          34
+        ],
+        [
+          "Working",
+          29
+        ],
+        [
+          "Sick",
+          13
+        ],
+        [
+          "New Baby",
+          8
+        ],
+        [
+          "Studying",
+          6
+        ],
+        [
+          "Nightmare",
+          4
+        ],
+        [
+          "Use Bathroom",
+          3
+        ]
+      ],
+      "question": "Tell Me A Reason Why A Person Might Be Awake At 3AM."
+    },
+    {
+      "answers": [
+        [
+          "Vacancy",
+          46
+        ],
+        [
+          "Nightly Rate",
+          18
+        ],
+        [
+          "Hotel's Name",
+          11
+        ],
+        [
+          "No Smoking",
+          6
+        ],
+        [
+          "Cable TV",
+          6
+        ]
+      ],
+      "question": "Name Something The Sign Outside A Hotel Might Tell You"
+    },
+    {
+      "answers": [
+        [
+          "Water",
+          48
+        ],
+        [
+          "Soup",
+          31
+        ],
+        [
+          "Pan / Saucepan",
+          20
+        ],
+        [
+          "Food",
+          13
+        ],
+        [
+          "Coffee",
+          9
+        ],
+        [
+          "An Argument",
+          6
+        ]
+      ],
+      "question": "Name Something that Gets Heated"
+    },
+    {
+      "answers": [
+        [
+          "Flashlight",
+          42
+        ],
+        [
+          "Remote Control",
+          26
+        ],
+        [
+          "Radio",
+          11
+        ],
+        [
+          "Toys",
+          8
+        ],
+        [
+          "Music Player",
+          6
+        ],
+        [
+          "Portable Videogame",
+          5
+        ]
+      ],
+      "question": "Name Something Around The House You Might Keep Spare Batteries For"
+    },
+    {
+      "answers": [
+        [
+          "Make Up",
+          48
+        ],
+        [
+          "Comedy",
+          31
+        ],
+        [
+          "How To Juggle",
+          20
+        ],
+        [
+          "Magic",
+          13
+        ],
+        [
+          "Getting Dressed",
+          9
+        ]
+      ],
+      "question": "Name Something You Might Study At Clown College"
+    }
+  ],
+  "final_round_timers": [
+    20,
+    25
+  ]
+}

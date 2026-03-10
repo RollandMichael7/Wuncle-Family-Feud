@@ -61,8 +61,38 @@
             "pnt": 2
         }
       ],
-      "multiply": 2,
+      "multiply": 1,
       "question": "Name something that might be full of holes"
+    },
+        {
+      "answers": [
+        {
+          "ans": "Bathroom",
+          "pnt": 53
+        },
+        {
+          "ans": "Work",
+          "pnt": 21
+        },
+        {
+          "ans": "Hospital/Doctor/Dentist",
+          "pnt": 10
+        },
+        {
+          "ans": "Grocery Store",
+          "pnt": 5
+        },
+        {
+            "ans": "Court/Jury Duty",
+            "pnt": 4
+        },
+        {
+            "ans": "DMV",
+            "pnt": 4
+        }
+      ],
+      "multiply": 2,
+      "question": "Like it or not, name a place people have to go."
     },
     {
       "answers": [
@@ -93,6 +123,16 @@
       ],
       "multiply": 3,
       "question": "Other than feet, name something that runs"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Clothes`",
+          "pnt": 87
+        }
+      ],
+      "multiply": 1,
+      "question": "Name something people squeeze in to"
     }
   ],
   "final_round": [
