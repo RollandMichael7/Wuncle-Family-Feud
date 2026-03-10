@@ -50,6 +50,7 @@ type round struct {
 	Answers  []answer `json:"answers"`
 	Multiply int      `json:"multiply"`
 	Question string   `json:"question"`
+	IsCompleted bool `json:"isCompleted"`
 }
 
 type finalRound struct {

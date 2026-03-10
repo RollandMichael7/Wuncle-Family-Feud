@@ -37,6 +37,7 @@ function TeamControls(props) {
         onClick={() => {
           props.game.teams[props.team].points =
             props.game.point_tracker[props.game.round] + props.game.teams[props.team].points;
+          props.game.rounds[props.game.round].isCompleted = true;
           props.setPointsGivin({
             state: true,
             color: "bg-secondary-500",
@@ -833,15 +834,19 @@ export default function AdminPage(props) {
                           props.setGame((prv) => ({ ...prv }));
 
                           if (x.trig) {
-                            game.point_tracker[game.round] =
-                              game.point_tracker[game.round] + x.pnt * current_round.multiply;
-                            props.setGame((prv) => ({ ...prv }));
+                            if (!game.rounds[game.round].isCompleted) {
+                              game.point_tracker[game.round] =
+                                game.point_tracker[game.round] + x.pnt * current_round.multiply;
+                              props.setGame((prv) => ({ ...prv }));
+                            }
                             send({ action: "reveal" });
                           } else {
-                            game.point_tracker[game.round] =
-                              game.point_tracker[game.round] - x.pnt * current_round.multiply;
-                            if (game.point_tracker[game.round] < 0) {
-                              game.point_tracker[game.round] = 0;
+                            if (!game.rounds[game.round].isCompleted) {
+                              game.point_tracker[game.round] =
+                                game.point_tracker[game.round] - x.pnt * current_round.multiply;
+                              if (game.point_tracker[game.round] < 0) {
+                                game.point_tracker[game.round] = 0;
+                              }
                             }
                             props.setGame((prv) => ({ ...prv }));
                           }
