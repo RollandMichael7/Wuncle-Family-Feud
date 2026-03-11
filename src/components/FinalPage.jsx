@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import "@/i18n/i18n";
+import React, { useEffect } from "react";
 import FinalRoundAnswers from "./FinalRoundAnswers";
 
 export default function FinalPage(props) {
@@ -7,6 +8,13 @@ export default function FinalPage(props) {
   let total = 0;
 
   console.log(props.game);
+
+  useEffect(() => {
+    if (!props.game.hide_first_round) {
+      var audio = new Audio("fm-answer-reveal.mp3");
+      audio.play();
+    }
+  }, [props.game.hide_first_round]);
 
   props.game.final_round.forEach((round) => {
     console.debug("round one total: ");
