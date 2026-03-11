@@ -16,7 +16,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ isVisible, questi
     if (isVisible) {
       // TODO: make this actually work
       textFit(document.getElementsByClassName("final-round-answer"), {
-        multiLine: true,
+        //multiLine: true,
         detectMultiLine: false,
         alignVert: true,
         widthOnly: true,
