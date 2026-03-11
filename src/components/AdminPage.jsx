@@ -614,7 +614,7 @@ export default function AdminPage(props) {
                   className="grow rounded border-4 bg-secondary-300 p-10 text-2xl text-foreground"
                   onClick={() => {
                     game.title = true;
-                    game.round = 0;
+                    //game.round = 0;
                     game.is_final_round = false;
                     game.is_final_second = false;
                     props.setGame((prv) => ({ ...prv }));
