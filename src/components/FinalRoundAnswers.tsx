@@ -54,7 +54,7 @@ const FinalRoundAnswers: React.FC<FinalRoundAnswersProps> = ({ isVisible, questi
         <p
           id={`finalRound${roundNumber}Answer${i}Text`}
           className="final-round-answer text-fastm-text"
-          style={{ textAlign: "left", width: "100%", marginLeft: 10, marginRight: 10 }}
+          style={{ textAlign: "left", width: "100%", marginLeft: 10, marginRight: 30 }}
         >
           {x.revealed && isVisible ? x.input : ""}
         </p>

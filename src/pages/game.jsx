@@ -142,7 +142,7 @@ export default function Game(props) {
               return prevTimer - 1;
             } else {
               var audio = new Audio("fm-clock-end.wav");
-              audio.play();
+              //audio.play();
               clearInterval(timerInterval);
 
               // Send timer stop to admin.js
