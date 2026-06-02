@@ -1,0 +1,257 @@
+{
+  "rounds": [
+    {
+      "answers": [
+        {
+          "ans": "Washing Dishes",
+          "pnt": 18
+        },
+        {
+          "ans": "Dusting",
+          "pnt": 17
+        },
+        {
+          "ans": "Vacuum",
+          "pnt": 16
+        },
+        {
+          "ans": "Sweeping",
+          "pnt": 14
+        },
+        {
+          "ans": "Taking Out Trash",
+          "pnt": 11
+        },
+        {
+          "ans": "Picking Up",
+          "pnt": 10
+        },
+        {
+          "ans": "Making Bed",
+          "pnt": 6
+        }
+      ],
+      "multiply": 1,
+      "question": "Name The Easiest Household Chore"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Car",
+          "pnt": 52
+        },
+        {
+          "ans": "Shoes",
+          "pnt": 34
+        },
+        {
+          "ans": "Bath / Shower",
+          "pnt": 22
+        },
+        {
+          "ans": "Floor",
+          "pnt": 14
+        },
+        {
+          "ans": "Teeth",
+          "pnt": 9
+        },
+        {
+          "ans": "Oven",
+          "pnt": 6
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something That Is Hard To Keep Clean"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Birthdays",
+          "pnt": 69
+        },
+        {
+          "ans": "Appointments",
+          "pnt": 15
+        },
+        {
+          "ans": "Anniversary",
+          "pnt": 7
+        },
+        {
+          "ans": "Vacation",
+          "pnt": 3
+        }
+      ],
+      "multiply": 2,
+      "question": "Name Something People Mark On Their Calendars"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Towel",
+          "pnt": 54
+        },
+        {
+          "ans": "Sunscreen",
+          "pnt": 30
+        },
+        {
+          "ans": "Beach Toys",
+          "pnt": 6
+        },
+        {
+          "ans": "Sandals",
+          "pnt": 5
+        }
+      ],
+      "multiply": 3,
+      "question": "Name Something In A Beach Bag, That's Not In Most Purses"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Finances",
+          "pnt": 43
+        }
+      ],
+      "multiply": 1,
+      "question": "Name A Responsibility That Most Married Couples Share"
+    }
+  ],
+  "final_round": [
+    {
+      "answers": [
+        [
+          "Egyptian Pyramid",
+          42
+        ],
+        [
+          "Food Pyramid",
+          31
+        ],
+        [
+          "Pyramid Scheme",
+          10
+        ],
+        [
+          "Cheerleaders Pyramid",
+          9
+        ],
+        [
+          "$100,000 Pyramid",
+          5
+        ]
+      ],
+      "question": "Name A Kind Of Pyramid"
+    },
+    {
+      "answers": [
+        [
+          "Mom",
+          57
+        ],
+        [
+          "Dad",
+          17
+        ],
+        [
+          "Doctor",
+          10
+        ],
+        [
+          "Best Friend",
+          7
+        ]
+      ],
+      "question": "Name Someone Who Always Has Advice To Give You"
+    },
+    {
+      "answers": [
+        [
+          "Taste Of Food",
+          56
+        ],
+        [
+          "Clean House",
+          20
+        ],
+        [
+          "Conversation",
+          15
+        ],
+        [
+          "Outfit",
+          7
+        ]
+      ],
+      "question": "Name Something You'd Worry About If You Were To Host A Dinner Party"
+    },
+    {
+      "answers": [
+        [
+          "Buy Beer",
+          45
+        ],
+        [
+          "See Music",
+          29
+        ],
+        [
+          "Drive",
+          19
+        ],
+        [
+          "Job Interview",
+          12
+        ],
+        [
+          "Impress Someone",
+          8
+        ],
+        [
+          "Buy Cigarettes",
+          5
+        ],
+        [
+          "Date",
+          3
+        ]
+      ],
+      "question": "Name A Reason A Person Might Pretend To Be Older"
+    },
+    {
+      "answers": [
+        [
+          "Barber",
+          41
+        ],
+        [
+          "Butcher",
+          26
+        ],
+        [
+          "Gardener",
+          13
+        ],
+        [
+          "Tailor",
+          9
+        ],
+        [
+          "Lumberjack",
+          5
+        ],
+        [
+          "Carpenter",
+          3
+        ]
+      ],
+      "question": "Name An Occupation In Which One Spends His Day Cutting"
+    }
+  ],
+  "final_round_timers": [
+    20,
+    25
+  ]
+}
